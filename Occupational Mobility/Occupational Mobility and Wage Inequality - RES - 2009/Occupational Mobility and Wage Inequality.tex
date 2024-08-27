@@ -1,0 +1,386 @@
+\documentclass[12pt]{article}
+
+\newcommand{\CiteMathPackage}{../../math}
+\newcommand{\CiteReference}{../reference.bib}
+
+% Packages
+\usepackage{setspace,amsmath,amsfonts,amssymb,amsthm,fancyvrb,soul}
+\usepackage{epstopdf,marginnote,datetime,enumitem,rotating}
+\usepackage{graphicx,threeparttable,booktabs,float}
+
+% Page Setup
+\usdate
+\usepackage{geometry}
+\geometry{scale=0.8}
+\usepackage{titlesec}
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.]
+\titlelabel{\thetitle.\;}
+\usepackage{indentfirst}
+\setlength{\parindent}{10pt}
+\setlength{\parskip}{10pt}
+\AtBeginDocument{\addtocontents{toc}{\protect\setlength{\parskip}{5pt}}}
+\usepackage{Alegreya}
+\usepackage[T1]{fontenc} 		 
+
+%% Bibliography
+\usepackage{natbib,fancybox,url,xcolor}
+\definecolor{MyBlue}{rgb}{0,0.2,0.6}
+\definecolor{MyRed}{rgb}{0.4,0,0.1}
+\definecolor{MyGreen}{rgb}{0,0.4,0}
+\definecolor{MyPink}{HTML}{E50379}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}}
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref}
+\bibliographystyle{econ}
+
+%% Theorem Environment
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\usepackage{mathtools}
+\usepackage{\CiteMathPackage}
+
+\begin{document}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%-% Title
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\title{\bf {Occupational Mobility and Wage Inequality, Review of Economic Studies, 2009}}
+\author{Wenzhi Wang \thanks{This note is written in my MPhil period at the University of Oxford.} } 
+\date{\today}
+\maketitle
+
+\citet{kambourovOccupationalMobilityWage2009}
+
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+%-- Section 1 and 2
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+
+\section{Introduction}
+
+{\bf Summary}: The increase in the variability of productivity shocks to occupations, coupled with the endogenous response of workers to this change, can account for most of the increase in within-group wage inequality.
+
+{\bf Motivating Facts}:  
+\begin{itemize}[topsep=0pt, leftmargin=20pt, itemsep=0pt]
+	\setlength{\parskip}{10pt} 
+	\item On the one hand, wage inequality in the U.S. from the early 1970s to the mid-1990s has increased significantly.
+	\item On the other hand, there was also a considerable increase in the fraction of workers switching occupations over the same period. 
+	\item Given another evidence that human capital is occupation-specific, it is appealing to link occupation mobility to wage inequality.
+\end{itemize}
+
+{\bf Model and Data}: The cross-sectional wage dispersion depends, among other things, on the distribution of occupational tenure in the population, and on the distribution of workers across occupations with different productivities and demands. 
+
+\section{Facts}
+{\bf Summary of the Facts}: From the early 1970s until the mid-1990s the labour market underwent significant changes along several dimensions -- wage inequality increased, wages became more volatile, and individuals switched occupations more often.
+
+\subsection{Wage Inequality}
+{\bf Three Definitions of Wage}:  
+\begin{itemize}[topsep=0pt, leftmargin=20pt, itemsep=0pt]
+	\setlength{\parskip}{10pt} 
+	\item \highlightB{Overall}: $w_{it}$ is the real hourly earnings of individual $i$ in year $t$ obtained by the PSID by dividing real annual earnings by total hours worked.
+	\item \highlightB{Within-Group 1}: Age and education have some effects on wages that are not present in the model. The authors obtain such a measure of residual wages through the following regression:
+	\begin{equation}
+		\label{1}
+		\log\of{w_{it}} = \b X_{it} + \ve_{it},
+	\end{equation}
+	where \highlightR{$X_{it}$ includes a constant term, a set of eight education dummies, a quartic in experience, and interactions of the experience quartic with three broad education categories}. The first measure of residual (log) wage is $\log\of{w_{it}^r} = \log\of{w_{it}} - \wh{\b} X_{it}$.
+	\item \highlightB{Within-Group 2}: Within-Group 1 wage measure is too restrictive. First, occupational experience rises with age, on average. Second, the quality of occupational matches increases with age due to the search process. These are essential features of their model and these factors' contribution should not be factored out from wages in the data.
+	
+	\highlightP{Thus, we include occupational tenure and occupational dummies into the regression and subtract from wages the contribution of age that is not driven by (i) the accumulation of occupational human capital, or (ii) the increased quality of occupational matches over the life cycle.} In particular, they first run the following regression:
+	\begin{equation}
+		\label{2}
+		\log\of{w_{it}} = \t X_{it} + \g Z_{it} + \e_{it},
+	\end{equation}
+	\highlightR{$Z_{it}$ contains a set of dummy variables for three-digit occupations and the tenure of individual $i$ in his three-digit occupation.} Then the within-group 2 measure is $\log\of{\wt{w}_{it}^r} = \log\of{w_{it}} - \wh{\t} X_{it}$.
+\end{itemize}
+
+{\bf Measurement Issues}:
+
+In what follows, we document all three measures of wages in the data since two data limitations make our preferred \highlightB{Within-Group 2} measure of wages not as precise as desired. First, \highlightP{occupational tenure is not well measured in the early years of the sample}. The PSID asks individuals to describe their current occupation but does not ask them about the number of years they have worked in their current occupation. Therefore, one needs to follow individual histories to construct occupational tenure. Since the PSID sample starts with a cross-section in 1968, before each of these individuals switches occupations for the first time in the sample we cannot be sure about their occupational tenure. Thus, at least until the mid- to late 1970's the occupational tenure measures are imprecise.
+
+Second, \highlightP{the three-digit occupational dummies are noisy, especially in the 1981-1997 period}. Prior to 1981 occupational affiliation data comes from the Retrospective Occupation-Industry Supplemental Data Files. These files allow us to precisely identify occupational switches. It is not clear, however, how well these files identify genuine occupational affiliations. \footnote{For example, if we see an individual classified as a truck driver for three years and then his occupational code switches to that of a cook, we know with high degree of certainty that the individual switched his occupations. We are much less sure that the individual indeed was a truck driver before the switch.} After 1981 the problem becomes even worse because only the noisy originally coded occupational affiliation data is available. In sum, while we find that it is possible to identify switches quite precisely, there is much uncertainty as to the precise titles of the occupations in which individuals are working.
+
+Finally, \highlightP{the demographic structure of the population has been changing over time while it is not changing in the model}. Thus, we construct weights for each individual in each year such that the weighted age-education-race population structure remains constant over time at its average level. When computing various statistics from the data, such as wage inequality, we weight each observation using these weights. 
+
+{\bf Facts}: Wage inequality has increased substantially over the 1969-1996 period. Overall inequality, as measured by the variance of log wages, increased from its average value of 0.225 in 1970-1973 to 0.354 in 1993-1996. 
+
+\subsection{Decline in Wage Stability}
+{\bf Measure}: One can decompose the log annual earnings $y_{it}$ of individual $i$ in year $t = 1, 2, \ldots, T$ as 
+\begin{equation}
+	\notag
+	y_{it} = \pi_i + \eta_{it},
+\end{equation}
+where $\pi_i$ is the mean log earnings of individual $i$ over $T$ years, while $\eta_{it}$ is the deviation of $y_{it}$ from the individual mean log earnings in year $t$. Denote by $\var\of{\eta_i}$ the variance of $\eta_{{it}}$ for individual $i$ over the $T$ years. Consider two nine-year periods -- 1970-1978 and 1988-1996. Average (across individuals) variance of $\eta_{it}$ increased substantially between the first and the second periods.
+
+\subsection{Increase in Occupational Mobility}
+
+{\bf Measure}: \highlightB{Occupational mobility} is defined as the fraction of currently employed individuals who report a current occupation different from their most recent previous report.
+
+\section{An Equilibrium Model with Occupation-Specific Experience} 
+
+\subsection{Environment}
+\begin{itemize}
+	\item The economy consists of \highlightP{a continuum of occupations} and a measure one of ex-ante identical individuals. Individuals die (leave the labour force) each period with probability $\d$ and are replaced by newly born ones.
+	\item There are two experience levels in each occupation: workers are either inexperienced or experienced. \highlightP{Experience is occupation specific}, and newcomers to an occupation, regardless of the experience they had in their previous occupations, begin as inexperienced workers. Each period, an inexperienced worker in an occupation becomes experienced with probability $p$.
+	\item \highlightP{Those who, at the beginning of the period, decide to leave their occupation, search for one period and arrive in a new occupation at the beginning of the next period.} Search is random in the sense that the probability of arriving to a specific occupation is the same across all occupations. \footnote{The assumption that a worker switching occupations searches for one period is made in order to make the experiment we conduct in this paper more interesting. An alternative assumption would be to change the timing of the model so that the separation decisions are taken at the end of a period so that a switching worker instantaneously starts the new period in a new occupation. This would imply that we force individuals to work for one period in an occupation they may not like. Thus an increase in the variance of idiosyncratic productivity shocks will necessarily increase wage inequality. We choose to allow workers to escape the low realizations of occupation productivity shocks in order to make the relationship between occupational mobility and wage inequality truly endogenous. }
+\end{itemize}
+
+\subsection{Preferences}
+Individuals are risk neutral and maximize:
+\begin{equation}
+	\label{3}
+	E \sum_{t=0}^{\infty} \beta^t(1-\delta)^t c_t .
+\end{equation}
+{The decisions rules and equilibrium allocations in the model with risk-neutral workers are equivalent to those in a model with risk-averse individuals and complete insurance markets.}
+
+\subsection{Production}
+All occupations produce the same homogenous good. Output $y$ in an occupation is produced with the production technology
+\begin{equation}
+	\label{4}
+	y = z\bs{ag_1^\r + \bp{1-a}g_2^\r}^{\g/\r},
+\end{equation}
+where $\r \leq 1, 0 < \g < 1, 0 < a < 1$, $g_1$ is the measure of inexperienced individuals working in the occupation, $g_2$ is the measure of experienced individuals working in the occupation, and $z$ denotes the idiosyncratic productivity shock. The productivity shocks evolve according to the process
+\begin{equation}
+	\label{5}
+	\ln\of{z^{\prime}} = \a \bp{1-\phi} + \phi\ln\of{z} + \ve^{\prime},
+\end{equation}
+where $0 < \phi < 1$ and $\ve^{\prime} \sim N\of{0 , \s_{\ve}^2}$. We denote the transition function for $z$ as $Q\of{z, dz^{\prime}}$.
+
+There are a large number of competitive employers in each occupation, and the \highlightP{wages that the inexperienced and experienced workers receive in an occupation are equal to their respective marginal products}. We assume that there are competitive spot markets for the fixed factor in each occupation, implied by the production function. Households own the same market portfolio of all the fixed factors in the economy which yields the same return. Since we study only the inequality of wages in this paper, without loss of generality, we do not explicitly model households' asset income.
+
+\subsection{Occupation Population Dynamics}
+Let $\psi = \bp{\psi_1, \psi_2}$ denote the beginning of the period distribution of workers present in an occupation, where $\psi_1$ is the measure of inexperienced workers while $\psi_2$ is the measure of experienced ones. At the beginning of the period, the idiosyncratic productivity shock $z$ is realized. Some individuals in an occupation $\bp{\psi, z}$ could decide to leave the occupation and search for a better one. Denote by $g\of{\psi, z} = \bp{g_1, g_2}$ the end of the period distribution of workers in an occupation, where $g_j$ is the measure of workers with experience $j=1,2$ who decide to stay and work in an occupation $(\psi, z)$.
+
+\highlightR{WWZ's Notes: The assumption that occupations lie in a continuum space is important!}
+
+Let $S$ be the economy-wide measure of workers searching for a new occupation. Then $S$ and $g\of{\psi, z}$ determine the next period's starting distribution, $\psi^{\prime}$, of workers over experience levels in each occupation. The law of motion for $\psi$ in an occupation is 
+\begin{equation}
+	\label{6}
+	\psi^{\prime}=\left(\psi_1^{\prime}, \psi_2^{\prime}\right)=\Gamma\bp{g(\psi, z)}=\left(\delta+(1-\delta) S+(1-p)(1-\delta) g_1, p(1-\delta) g_1+(1-\delta) g_2\right)
+\end{equation}
+
+In the beginning of the next period, the number of inexperienced workers who will start in an occupation is equal to (i) the employed inexperienced workers this period who survive and do not advance to the next experience level, plus (ii) {the newly arrived workers -- those who are searching this period and survive, $(1-\d)S$}, and the new entrants into the labor market, $\d$. Similarly, the measure of experienced workers in the beginning of the next period is equal to the employed experienced workers this period who survive, plus those employed inexperienced this period who survive and become experienced next period.
+
+\subsection{Individual Value Functions}
+Consider the decision problem of an individual in an occupation $\bp{\psi, z}$ who takes as given $g\of{\psi, z}, S$, and $V^S$ -- the value of leaving an occupation and searching for a new one. Denote by $w_1\of{\psi, z}$ the wage of inexperienced workers in occupation $\bp{\psi, z}$. Then $V_1\of{\psi,z}$, the value of starting the period in occupation $\bp{\psi, z}$ as an inexperienced worker is 
+\begin{equation}
+	\label{7}
+	V_1(\psi, z)=\max \left\{V^s, w_1(\psi, z)+\beta(1-\delta) \int\left[(1-p) V_1\left(\psi^{\prime}, z^{\prime}\right)+p V_2\left(\psi^{\prime}, z^{\prime}\right)\right] Q\left(z, d z^{\prime}\right)\right\} .
+\end{equation}
+
+If the worker leaves the occupation, her expected value is equal to $V^s$. The value of staying and working in the occupation is equal to the wage received this period plus the expected discounted value from the next period on, taking into account the fact that with probability $p$ she will become experienced next period and with probability $\d$ she will die.
+
+Similarly, $V_2\of{\psi, z}$, the value of an experienced worker in an occupation $\bp{\psi, z}$, is
+\begin{equation}
+	\label{8}
+	V_2(\psi, z)=\max \left\{V^s, w_2(\psi, z)+\beta(1-\delta) \int V_2\left(\psi^{\prime}, z^{\prime}\right) Q\left(z, d z^{\prime}\right)\right\} .
+\end{equation}
+
+As in the case of inexperienced workers, if an experienced worker leaves the occupation, her expected value is equal to $V^s$. The value of staying and working in the occupation is equal to the wage received this period plus the expected discounted value from the next period on.
+
+\subsection{Stationary Distribution}
+We are focusing on a stationary environment characterized by a stationary, occupation-invariant distribution $\m\of{\psi, z}$:
+\begin{equation}
+	\label{9}
+	\mu\left(\Psi^{\prime}, Z^{\prime}\right)=\int_{\left\{(\psi, z): \psi^{\prime} \in \Psi^{\prime}\right\}} Q\left(z, Z^{\prime}\right) \mu(d \psi, d z),
+\end{equation}
+where $\Psi^{\prime}$ and $Z^{\prime}$ are sets of experience distributions and idiosyncratic shocks, respectively.
+
+\section{Equilibrium}
+\begin{definition}
+	\label{def:equilibrium}
+	A stationary equilibrium consists of value functions $V_1\of{\psi, z}$ and $V_2\of{\psi, z}$, occupation employment rules $g_1\of{\psi,z}$ and $g_2\of{\psi, z}$, an occupation-invariant measure $\m\of{\psi, z}$, the value of search $V^S$, and the measure $S$ of workers switching occupations, such that
+	\begin{enumerate}
+		\item $V_1\of{\psi, z}$ and $V_2\of{\psi, z}$ satisfy the Bellman equations, given $V^S, g\of{\psi, z}$, and $S$.
+		\item Wages in an occupation are competitively determined:
+		\begin{equation}
+			\notag
+			\begin{aligned}
+				& w_1=z \gamma a g_1^{\rho-1}\left[a g_1^\rho+(1-a) g_2^\rho\right]^{(\gamma-\rho) / \rho} \\
+				& w_2=z \gamma(1-a) g_2^{\rho-1}\left[a g_1^\rho+(1-a) g_2^\rho\right]^{(\gamma-\rho) / \rho}
+			\end{aligned}
+		\end{equation}
+		\item The occupation employment rule $g\of{\psi, z}$ is consistent with individual decisions:
+		\begin{enumerate}
+			\item If $g_1\of{\psi, z} = \psi_1$ and $g_2\of{\psi, z} = \psi_2$, then $V_1\of{\psi,z}\geq V^S$ and $V_2\of{\psi, z} \geq V^S$.
+			\item If $g_1\of{\psi, z} < \psi_1$ and $g_2\of{\psi, z} = \psi_2$, then $V_1\of{\psi,z}= V^S$ and $V_2\of{\psi, z} \geq V^S$.
+			\item If $g_1\of{\psi, z} = \psi_1$ and $g_2\of{\psi, z} < \psi_2$, then $V_1\of{\psi,z}\geq V^S$ and $V_2\of{\psi, z} = V^S$.
+			\item If $g_1\of{\psi, z} < \psi_1$ and $g_2\of{\psi, z} < \psi_2$, then $V_1\of{\psi,z}= V^S$ and $V_2\of{\psi, z} = V^S$.
+		\end{enumerate}
+		\item Individual decisions are compatible with the invariant distribution:
+		\begin{equation}
+			\notag
+			\mu\left(\Psi^{\prime}, Z^{\prime}\right)=\int_{\left\{(\psi, z): \psi^{\prime} \in \Psi^{\prime}\right\}} Q\left(z, Z^{\prime}\right) \mu(d \psi, d z) .
+		\end{equation}
+		\item For an occupation $\bp{\psi, z}$, the feasibility conditions are satisfied:
+		\begin{equation}
+			\notag
+			0 \leq g_j\of{\psi, z} \leq \psi_j \text{ for } j = 1, 2.
+		\end{equation}
+		\item Aggregate feasibility is satisfied:
+		\begin{equation}
+			\notag
+			S=1-\int\left[g_1(\psi, z)+g_2(\psi, z)\right] \mu(d \psi, d z) .
+		\end{equation}
+		\item The value of search, $V^S$, is generated by $V_1\of{\psi, z}$ and $\m\of{\psi, z}$:
+		\begin{equation}
+			\notag
+			V^s=(1-\delta) \beta \int V_1(\psi, z) \mu(d \psi, d z).
+		\end{equation}
+	\end{enumerate}
+\end{definition}
+
+Given the postulated production function, in general, one cannot guarantee uniqueness of the candidate policy $g\of{\psi, z}$ consistent with equilibrium (as would be the case if experienced and inexperienced workers were perfectly substitutable). Given our estimates below, experienced and inexperienced workers are only mildly complementary, and thus we do not encounter such multiplicity (anywhere in the state space) when computing the model. As a precaution, however, our computational algorithm allows for such multiplicity. In particular, if there existed multiple candidate policies $g\of{\psi, z}$ consistent with equilibrium, it would select one that maximizes the value function 
+\begin{equation}
+    \notag 
+    H(\psi, z)=\max \left\{z\left[a g_1^\rho+(1-a) g_2^\rho\right]^{\gamma / \rho}+\beta \sum_{z^{\prime}} H\left(\psi^{\prime}, z^{\prime}\right) Q\left(z, z^{\prime}\right)\right\} .
+\end{equation}
+This procedure selects the equilibrium policy that maximizes the expected present discounted value of production in an occupation or, alternatively, total wages, or the returns to the (unobserved) fixed factor.
+
+\section{Quantitative Analysis}
+
+\subsection{The Experiment}
+
+The model parameters to be calibrated are 
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\arabic*)]
+    \setlength{\parskip}{10pt} 
+    \item $\d$ the probability of an individual dying, 
+    \item $\b$ the time discount rate,
+    \item $p$ the probability of an inexperienced individual becoming experienced,
+    \item $\g$ the curvature parameter of the production function, 
+    \item $a$ the distribution parameter of the production function, 
+    \item $\rho$ the substitution parameter of the production function, 
+    \item $\a$ the unconditional mean of the stochastic process generating shocks $z$,
+    \item $\phi$ the persistence parameter of the stochastic process generating shocks $z$, 
+    \item $\s_\ve^2$ the variance of innovations in the stochastic process generating shocks $z$.
+\end{enumerate}
+
+The first six parameters above are assumed to be invariant over the 1969-1996 period. The last three parameters, $\a$, $\phi$, and $\s_\ve$, which govern the idiosyncratic occupational productivity shocks, are assumed to be different in the early 1970s and mid-1990s. Thus, the authors calibrate $\a$, $\phi$, and $\s_\ve$ to match the properties of occupational mobility separately in the 1970-1973 and 1993-1996 periods. 
+
+\subsection{Calibration Details}
+
+The authors choose the model period to be two months. They think that the economically relevant choice of the model period is considerably longer. They choose such a short model period to emphasize that the model generates substantial wages dispersion for no other reason but the presence of occupation-specific human capital. 
+
+Because they assume that individuals forgo a period of earnings while switching occupations, the length of the model period represents the cost of switching occupations in addition to the amount of lost occupation-specific skills. Part of these costs comes from the costs associated with basic training necessary for entry into most occupations. It is difficult to measure the cost of such training directly. Setting the costs of switching occupations to two months of forgone earnings appears quite conservative. Especially, given the fact that they assume risk neutrality -- an assumption that further decreases the cost of switching occupations in the model. Since the PSID has annual frequency, we observe only an annual rate of occupational mobility in the data. To maintain consistency between the model and the data we will pretend that we observe each individual in the model only every sixth period.
+
+The authors choose $\d = 0.0042$ to generate expected working lifetime of 40 years. They set $\b = \frac{1}{1+r}$, where $r$ corresponds to an annual interest rate of 4\%. They choose $p = 0.0167$, which implies that it takes, on average, 10 years for a newcomer to an occupation to become experienced in that occupation.
+
+\subsection{Production Function}
+
+The authors select $\g = 0.68$ to match the labor share implicit in the NIPA accounts. To obtain $a$ and $\rho$, they employ the following procedure. Taking the ratio of the wages paid to the experienced and inexperienced workers in an occupation (defined by the choice of $p$), one obtains 
+\begin{equation}
+	\label{10}
+	\frac{w_2}{w_1} = \frac{1-a}{a} \bp{\frac{g_2}{g_1}}^{\rho-1}.
+\end{equation}
+
+The parameters $a$ and $\rho$ are then estimated with the OLS, using the following regression model:
+\begin{equation}
+	\label{11}
+	\log\of{\frac{w_2}{w_1}}_{it} = \xi_0 + \xi_1 \log\bp{\frac{g_2}{g_1}}^{\rho-1}_{it} + \nu_{it},
+\end{equation}
+where $i$ indexes occupations, $t$ indexes time, and $\nu_{it}$ is a classical measurement error. The parameters of interest are obtained from $a = 1/\bp{e^{\wh{\xi_0}}+1}$ and $\rho = \wh{\xi_1} + 1$.
+
+\subsection{Stochastic Process}
+
+The authors determine the shock values $z_i$ and the transition matrix $Q\of{z, \cdot}$ for a 15-state Markov chain $\bc{z_1, z_2, \ldots, z_{15}}$ intended to approximate the postulated continuous-valued autoregression. 
+
+They first choose $\phi$ and $\s_\ve$ to match the following observations for the 1970-1973 period:
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\arabic*)]
+    \setlength{\parskip}{10pt} 
+    \item The average annual rate of occupational mobility at the three-digit level using the average population structure.
+    \item The average number of switches for those who switched a three-digit occupation at least once over the period. This statistic is also referred to as mobility persistence.
+\end{enumerate}
+Next, they choose $\phi$ and $\s_\ve$ to match the corresponding observations for the 1993-1996 period. We normalize $\a$ to be equal to 0 in the first period and adjust it in the second period to keep real average wages constant.
+
+\subsection{Computational Algorithm}
+
+\begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\arabic*)]
+\setlength{\parskip}{10pt} 
+\item Guess $S$ and $V^s$.
+\item Define a grid of points on $\bp{\psi_1, \psi_2, z}$.
+\item Guess a function $V_1^0\of{\psi_1, \psi_2, z}$ that is (weakly) decreasing and (weakly) convex in $\psi_1$, a function $V_2^0\of{\psi_1, \psi_2, z}$ that is (weakly) decreasing and (weakly) convex in $\psi_2$, and a function $H^0\of{\psi_1, \psi_2, z}$ that is (weakly) increasing in $\psi_1$ and $\psi_2$.
+\item For each point on the $\bp{\psi_1, \psi_2, z}$ grid, find the optimal policies $g_1$ and $g_2$ in the following way. Set $G = \bp{\psi_1, \psi_2}$. Then, 
+\begin{enumerate}[topsep=0pt, leftmargin=25pt, itemsep=0pt, label=(\alph*)]
+	\setlength{\parskip}{10pt} 
+	\item If both $V_1\of{\psi_1, \psi_2, z} \geq V^s$ and $V_2\of{\psi_1, \psi_2, z} \geq V^s$, everybody present in the occupation will choose to stay and thus $g = \psi_1$ and $g_2 = \psi_2$ is a consistent policy. Go to (5).
+	\item If the condition in (a) is not satisfied, then 
+    \begin{enumerate}[topsep=0pt, leftmargin=30pt, itemsep=0pt, label=(\roman*)]
+        \setlength{\parskip}{10pt} 
+        \item Set $G = \bp{\ol{g}_1, \psi_2}$, where $\ol{g}_1$ solves the following equation:
+        \begin{equation}
+            \notag 
+            \begin{aligned}
+            & z \gamma a \ol{g}_1^{\rho-1}\left[a \ol{g}_1^\rho+(1-a) \psi_2^\rho\right]^{\frac{\alpha-\rho}{\rho}}+ \\
+            & \beta(1-p) \sum_{z^{\prime}} V_1\left(\delta+(1-\delta)\left(S+(1-p) \overline{g_1}\right),(1-\delta)\left(p \overline{g_1}+\psi_2\right), z^{\prime}\right) Q\left(z, z^{\prime}\right)+ \\
+            & \beta p \sum_{z^{\prime}} V_2\left(\delta+(1-\delta)\left(S+(1-p) \overline{g_1}\right),(1-\delta)\left(p \overline{g_1}+\psi_2\right), z^{\prime}\right) Q\left(z, z^{\prime}\right)=V^s
+            \end{aligned}
+        \end{equation}
+        Check whether under his policy $V_2\of{\psi_1, \psi_2, z} \geq V^s$ and whether $\ol{g}_1$ is feasible. If not, then this $G$ cannot be a consistent policy. If yes, then $G$ is a candidate for the optimal policy. 
+        \item Set $G\of{\psi_1, \ol{g}_2}$, where $\ol{g}_2$ solves the following equation:
+        \begin{equation}
+            \notag 
+            \begin{aligned}
+            & z \gamma(1-a) \ol{g}_2^{\rho-1}\left[a \psi_1^\rho+(1-a) \ol{g}_2^\rho\right]^{\frac{\gamma-\rho}{\rho}}+ \\
+            & \beta \sum_{z^{\prime}} V_2\left(\delta+(1-\delta)\left(S+(1-p) \psi_1\right),(1-\delta)\left(p \psi_1+\overline{g_2}\right), z^{\prime}\right) Q\left(z, z^{\prime}\right)=V^s
+            \end{aligned}
+        \end{equation}
+        Check whether under this policy $V_1\of{\psi_1, \psi_2, z} \geq V^s$ and whether $\ol{g}_2$ is feasible. If not, then this $G$ cannot be a consistent policy. If yes, then $G$ is a candidate for the optimal policy. 
+        \item Set $G = \bp{\ol{g}_1, \ol{g}_2}$ where $\ol{g}_1$ and $\ol{g}_2$ jointly solve the equations in (i) and (ii) above. Check whether $\ol{g}_1$ and $\ol{g}_2$ are feasible. If not, then this $G$ cannot be a consistent policy. If yes, then $G$ is a candidate for the optimal policy.
+        \item The optimal policy is a candidate policy from the previous three cases that maximizes the value function $H\of{\psi_1, \psi_2, z}$, where 
+        \begin{equation}
+            \notag 
+            H(\psi, z)=\max \left\{z\left[a g_1^\rho+(1-a) g_2^\rho\right]^{\gamma / \rho}+\beta \sum_{z^{\prime}} H\left(\psi^{\prime}, z^{\prime}\right) Q\left(z, z^{\prime}\right)\right\}
+        \end{equation}
+    \end{enumerate}
+\end{enumerate}
+
+\item Given the optimal policy $G = \bp{g_1, g_2}$ obtained above, update the value functions and get $V_1^1\of{\psi_1, \psi_2, z}$, $V_2^1\of{\psi_1, \psi_2, z}$ and $H^1\of{\psi_1, \psi_2, z}$.
+\item Use $V_1, V_2$, and $H$ obtained above as the new guess in (3).
+\item Repeat steps 4 through 6 until the policy and value functions converge.
+\item Simulate a large number of occupations until the distribution of occupations generates an invariant $V^s$ and $S$, scaling the economy at each iteration to have measure one of individuals.
+\item Compare the obtained $V^s$ and $S$ with the initial guess in (1). If they are the same, stop.  If not, make a new guess in (1) that is a convex combination of the previous guess and  the simulated values.
+\end{enumerate}
+
+\section{The Level of Wage Inequality and Wage Stability}
+
+We did not target the dispersion or volatility of wages when calibrating the model. Instead, we targeted occupational mobility and let the model determine wage endogenously. Thus, the first question we ask is whether the calibrated model with occupation-specific human capital generates reasonable levels of wage inequality and wage volatility. In the next section, we will ask whether the increase in occupational mobility over time can help us understand the rise in the disperison and in the volatility of wages. 
+
+\subsection{Results}
+
+\subsection{The Importance of Human Capital}
+
+What accounts for the model's ability to generate substantial levels of wage dispersion? As we discuss in this section, occupation-specific human capital is of central importance. To isolate its effect we now calibrate the model without occupation-specific human capital to match the same targets as in the benchmark calibration (the model remains exactly the same with the only change that people of various occupational experience levels are perfectly substitutable in occupational production and are equally productive). We find that in the model without human capital the variance of log wages drops to $0.03$. Thus, it turns out that, without the loss of the specific human capital, the costs of switching occupations in terms of forgone earnings are too small to support a substantial wage dispersion.
+
+There are several channels that account for the importance of occupation-specific human capital in generating substantial wage inequality.
+
+First, and perhaps most importantly, \highlightP{the presence of human capital generates a lock-in effect}. Experienced workers who have accumulated a significant amount of specific human capital are willing to ride the shocks together with their occupations rather than switch them and destroy specific human capital. Less experienced workers are also less willing to switch occupations in the model not to forgo the accumulation of human capital in their occupation.
+
+Second, the presence of occupation-specific human capital leads to the dispersion of human capital levels and wages within occupations. Since computing the model is fairly hard we allowed for only two levels of occupational human capital. This limits the wage dispersion within occupations in the model.
+
+Third, the relative wages of experienced and inexperienced workers in an occupation depend on the number of workers of each type. When an occupation experiences a good productivity shock, a larger fraction of inexperienced workers who come to that occupation will decide to stay and work in that occupation. This decreases the wage of experienced workers but by less than the wages of inexperienced workers (since $\g < \rho$). Thus, some inexperienced workers may be induced to work in a highly productive occupation, despite receiving relatively low wages, in expectation of gaining experience and receiving higher wages in the future.
+
+
+\section{The Increase in Wage Inequality and the Decline in Wage Stability}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{\CiteReference}
+
+\end{document}
