@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+
+\newcommand{\CiteMathPackage}{../../math}
+\newcommand{\CiteReference}{../reference.bib}
+
+% Packages
+\usepackage{setspace,amsmath,amsfonts,amssymb,amsthm,fancyvrb,soul}
+\usepackage{epstopdf,marginnote,datetime,enumitem,rotating}
+\usepackage{graphicx,threeparttable,booktabs,float}
+
+% Page Setup
+\usdate
+\usepackage{geometry}
+\geometry{scale=0.8}
+\usepackage{titlesec}
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.]
+\titlelabel{\thetitle.\;}
+\usepackage{indentfirst}
+\setlength{\parindent}{10pt}
+\setlength{\parskip}{10pt}
+\AtBeginDocument{\addtocontents{toc}{\protect\setlength{\parskip}{5pt}}}
+\usepackage{Alegreya}
+\usepackage[T1]{fontenc} 		 
+
+%% Bibliography
+\usepackage{natbib,fancybox,url,xcolor}
+\definecolor{MyBlue}{rgb}{0,0.2,0.6}
+\definecolor{MyRed}{rgb}{0.4,0,0.1}
+\definecolor{MyGreen}{rgb}{0,0.4,0}
+\definecolor{MyPink}{HTML}{E50379}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}}
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref}
+\bibliographystyle{econ}
+
+%% Theorem Environment
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\usepackage{mathtools}
+\usepackage{\CiteMathPackage}
+
+\begin{document}
+
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+%-% Title
+%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%-%
+
+\title{\bf A Dynamic Analysis on Educational Attainment, Occupational Choices, and Job Search, International Economic Review, 2010}
+\author{Wenzhi Wang \thanks{This note is written in my MPhil period at the University of Oxford.} } 
+\date{\today}
+\maketitle
+
+\citet{sullivanDynamicAnalysisEducational2010}
+
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+%-- Introduction and Data
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+
+\section{Introduction}
+
+Over the course of their careers people choose how much education to obtain, which occupations to work in, and when to move between firms. These decisions are inherently interrelated, yet existing research has greatly examined educational attainment, occupational choices, and on-the-job human capital accumulation separately from decisions about job search. As a result of this separation in the literature, there is currently no way to assess the importance of interactions between these decisions or to determine the importance of human capital relative to the importance of mobility between firms and occupations in determining wage growth over the career. 
+
+The goal of this article is to address this gap in the literature by estimating a dynamic structural model of career choices that incorporates the key features of a job search model within a dynamic human capital model of occupational and educational choices. The model allows workers to accumulate firm- and occupation-specific human capital as they move between firms and occupations over their careers. Estimating the model provides evidence about the relative importance of human capital, job search, and matching between workers and occupations in determining wages and total utility. The parameter estimates reveal that each aspect of the model is quantitatively important and necessary to understand the evolution of wages over the career. However, the main empirical conclusion that emerges from this analysis is that \highlightP{self selection in occupational choices and mobility between firms are much more important determinants of total earnings and utility than the combined effects of firm- and occupation-specific human capital.}
+
+In the career choice model developed in this article, forward-looking workers choose when to attend school and when to move between occupations and firms as they maximize their discounted expected utility. Search frictions such as randomness in job offers and moving costs impose constraints on the mobility of workers between occupations and firms. Over the course of their careers workers endogenously accumulate general human capital in the form of education as well as occupation- and firm-specific human capital. The value of employment varies over the five occupations in the economy because workers have heterogeneous skill endowments and preferences for employment across occupations, and because the effect of human capital on wages varies across occupations. Workers search for suitable wage and nonpecuniary match values at firms across occupations given their innate skills and preferences and stock of human capital.
+
+
+
+\section{Data}
+
+NLSY79.
+
+This analysis uses only white men from the nationally representative core sample, and these individuals are followed from age 16 until age 30. The decision period in the model corresponds to a school year, which runs from September to August. The data are aggregated using an approach similar to that of \citet{keaneCareerDecisionsYoung1997} to assign yearly employment status and school attendance. 
+
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+%-- Model
+%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--%--
+
+\section{Economic Model of Career Choices}
+
+Each individual's career is modelled as a finite horizon, discrete time dynamic programming problem. Workers search for suitable wage and nonwage match values across firms while employed and non-employed given their skills and preferences for employment in each occupation. Each period, an individual always receives one job offer from a firm in each occupation and has the option of attending school, earning a GED, or becoming unemployed. In addition, people who are employed have the option of staying at their current job during the next year and may also have the option of switching occupations within their current firm. 
+
+\subsection{Utility Function}
+
+The utility function is a choice specific function of endogenous state variable ($S_t$), skill endowments and preferences, and random utility shocks that vary over time, people, occupations, and firm matches. The variable in $S_t$ measure educational attainment, firm- and occupation-specific human capital, and the quality of the match between a worker and firm. To index choices for the nonwork alternatives, let $s = school, g = GED$, and $u = unemployed$. Describing working alternatives requires two indexes. Let $eq =$ ``employed in occupation $q$,'' where $q = 1, 2, 3, 4, 5$ indexes occupations. Also, let $nf =$ ``working at a new firm,'' and $of =$ ``working at an old firm.'' Combinations of these indexes define all the feasible choices available to an individual. The description of the utility flows is simplified by defining another index that indicates whether or not a person is employed, so let $emp =$ ``employed.'' Define the binary variable $d_t\of{k}=1$ if choice combination $k$ is chosen at time $t$, where $k$ is a vector that contains a feasible combination of the choice indexes. For example, $d_t\of{s} = 1$ indicates that schooling is chosen at time $t$, and $d_t\of{s, e3, nf} = 1$ indicates attending school ($s$) while employed in the third occupation ($e3$) at a new firm ($nf$). Dual activities composed of combinations of any two activities are allowed subject to the logical restrictions outlined in Section 3.1.2.
+
+\subsubsection{Choice Specific Utility Flows}
+
+The utility flow from choice combination $k$ is the sum of the logarithm of the wage, $w_{it}\of{k}$, and non-pecuniary utility, $H_{it}\of{k}$, that person $i$ receives from choice combination $k$ at time $t$,
+\begin{equation}
+    \label{1}
+    U_{it}\of{k} = w_{it}\of{k} + H_{it}\of{k}.
+\end{equation}
+
+The log wage of worker $i$ employed at firm $j$ in occupation $q$ at time $t$ is 
+\begin{equation}
+    \label{2}
+    w_{it} = w_q\of{S_{it}} + \mu_i^q + \psi_{ij} + e_{ijt}.
+\end{equation}
+The term $w_q\of{S_{it}}$ represents the portion of the log wage that is a deterministic function of the work experience and education variables in the state vector. The term $\mu_i^q$ represents the random component of worker $i$'s wages that is common across all firms in occupation $q$. This term allows people to have comparative advantages in their occupation specific skill endowments. The permanent worker-firm productivity match is represented by $\psi_{ij}$. True randomness in wages is captured by $e_{ijt}$, All of the components of the wage ($w_{it}$) are observed by the worker when a job offer is received. 
+
+Nonpecuniary utility flows are composed of a deterministic function of the state vector, firm specific match values, person specific preference heterogeneity, and random utility shocks. The nonpecuniary utility flow equation is
+\begin{equation}
+    \label{3}
+    H_{it}\of{k} = h\of{k, S_{it}} + \bs{\phi_i^s \ind{s \in k} + \phi_i^u \ind{u \in k} + \sum_{q=1}^{5} \phi_i^q \ind{eq \in k}} + \ve_{ikt}.
+\end{equation}
+The first term in brackets represents the influence of the state vector on nonpecuniary utility flows and is discussed in more detail in the following paragraph. The second term in brackets captures the effect of person specific heterogeneity in preferences for attending school ($\phi_i^s$), being unemployed ($\phi_i^u$), and being employed in occupation $q$ ($\phi_i^q$). The final term is a shock to the nonpecuniary utility.
+
+The remaining portion of the nonpecuniary utility function contains the nonpecuniary employment and nonemployment utility flows along with the schooling cost function. 
+\begin{equation}
+    \label{4}
+    \begin{aligned}
+        h\of{k, S_{it}} = & \bs{\sum_{q=1}^{5} \t_q\of{S_{it}} \ind{eq \in k} + \xi_{ij} \ind{emp \in k}} \\
+        & + C^s\of{S_{it}} \ind{s \in k, emp \notin k} + C^{sw}\of{S_{it}} \ind{s \in k, emp \in k} \\
+        & + b\of{S_{it}} \ind{u \in k} + C^g\of{S_{it}} \ind{g \in k}.
+    \end{aligned}
+\end{equation}
+
+The term in brackets contains the occupation- and firm-specific nonpecuniary utility flows. The second line of Equation (\ref{4}) contains the schooling cost function for attending school while not employed and employed. The final components of the nonpecuniary utility flow are the deterministic portions of the value of leisure enjoyed while unemployed, and the cost function for earning a GED.
+
+\subsubsection{Constraints on the Choice Set} 
+
+First, consider the case of an individual who enters time period t having not been employed in the previous year. At the start of the year the individual receives five job offers, one from a firm in each of the five occupations in the economy. Any dual activity is a feasible choice, subject to the following restrictions. Earning a GED must be part of a joint activity, so the single activity $d_t(g) = 1$ is not a feasible choice. In addition, earning a GED is dropped from the choice set after high school graduation or GED receipt. Finally, unemployment and employment are mutually exclusive choices. Given these restrictions, the choice set for individuals who are not employed when they enter period $t$ is
+\begin{equation}
+    \label{5}
+    D_t^{ne} = \bc{\bs{d_t\of{s}, d_t\of{u}, d_t\of{u, g}}, \bs{d_t\of{ei, nf}, i=1,\ldots,5}, \bs{d_t\of{q, ei, nf}, q=s,g, i=1,\ldots,5}}.
+\end{equation}
+
+Next, consider the feasible choices for a person employed in occupation $q$. At the start of period $t$ the individual receives one new job offer from a firm in each of the five occupations and has the option to attend school, earn a GED, or become unemployed. In addition, an employed individual always has the option of remaining at his current firm and staying in his current occupation ($q$). Job offers from new occupations at the current firm are received randomly, where workers receive either zero or one such offer per year. Let $\pi_j$ denote the probability that a worker receives an offer to work in occupation $j$ at his current firm, where $j \neq q$. Let $\pi_{nq}$ be the probability that a worker employed in occupation $q$ does not receive an offer to switch occupations within his current firm. 
+
+The choice set for a worker employed in occupation $q$ who receives an offer to switch to occupation $j$ at his current firm is 
+\begin{equation}
+    \label{6}
+    D_t^{e}\of{j} = \bc{D_t^{ne}, \bs{d_t\of{eq, of}, d_t\of{s, eq, of}, d_t\of{g, eq, of}}, \bs{d_t\of{ej, of}, d_t\of{s, ej, of}, d_t\of{g, ej, of}}}.
+\end{equation}
+If an offer to switch occupations within the current firm is not received, then the final three choices are not available to the agent. Let $D_t^e\of{0}$ denote this 21-element choice set.
+
+\subsubsection{State Variables}
+
+The endogenous state variables in the vector $S_t$ measure human capital and the quality of the match between the worker and his current employer. Let $a_t$ represent an individual's age. Educational attainment is summarized by the number of years of high school and college completed, $h_t$ and $c_t$, and a dummy variable indicating whether or not a GED has been earned, $g_t$. Work experience is captured by the amount of firm-specific human capital ($f_t$) and occupation-specific human capital ($o_t$) in the occupation that the person worked in most recently. Let $O_t \in \bc{1, 2, \ldots, 5}$ indicate the occupation in which a person was most recently employed. Let $L_t$ be a variable that indicates a person's pervious choice, where $L_t \in \bc{1, 2, \ldots, 5}$ refers to working in occupations one through five, $L_t = 6$ indicates attending school full time, and $L_t = 7$ indicates unemployment.
+
+Given this notation, the state vector is $S_t = \bc{a_t, h_t, c_t, g_t, f_t, o_t, O_t, L_t, \xi_t, \psi_t}$. In order to keep the model tractable, only human capital in the most recent occupation is included in the state space even though this requires a strong assumption about the transferability of human capital across occupations and the depreciation of human capital. However, age effects are included in the wage equations to proxy for general human capital that has value in more than one occupation.
+
+In addition to assuming that only human capital in the most recent occupation affects wages, a second approach is taken to further reduce the size of the state space. Assume that firm- and occupation-specific human capital each take on $P$ values, so that the possible values of human capital arranged in ascending order are
+$$f_t \in FC = \bc{f\of{1}, \ldots, f\of{P}}$$
+$$o_t \in OC = \bc{o\of{1}, \ldots, o\of{P}}.$$
+After each year of work experience, with probability $\l$ human capital increases to the next level, and with probability $\bp{1-\l}$ human capital does not increase. There are separate skill increase probabilities for firm- and occupation-specific capital, and the rates of skill increase are also allowed to vary across occupations. The skill increase parameters are $\bc{\l_f^k, \l_o^k, k = 1, \ldots, 5}$. The size of the state space is significantly reduced when P is a small number relative to the possible values of years of work experience, but the model still captures the human capital improvement process. In this work, $P = 3$.
+
+\subsection{The Optimization Problem}
+
+Individuals maximize the present discounted value of expected lifetime utility from age 16 ($t=1$) to a known terminal age, $t = T^{**}$. At the start of his career, the individual knows the deterministic components of the utility function and his endowment of market skills and occupation-specific nonpecuniary match values. The maximization problem can be represented in terms of alternative specific value functions.
+
+\subsection{Solving the Career Decision Problem}
+
+
+
+\bibliography{\CiteReference}
+
+
+\end{document}
