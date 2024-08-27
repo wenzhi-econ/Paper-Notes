@@ -1,0 +1,123 @@
+\documentclass[12pt]{article}
+
+\newcommand{\CiteMathPackage}{../../math}
+\newcommand{\CiteReference}{../reference.bib}
+
+% Packages
+\usepackage{setspace,amsmath,amsfonts,amssymb,amsthm,fancyvrb,soul}
+\usepackage{epstopdf,marginnote,datetime,enumitem,rotating}
+\usepackage{graphicx,threeparttable,booktabs,float}
+
+% Page Setup
+\usdate
+\usepackage{geometry}
+\geometry{scale=0.8}
+\usepackage{titlesec}
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.]
+\titlelabel{\thetitle.\;}
+\usepackage{indentfirst}
+\setlength{\parindent}{10pt}
+\setlength{\parskip}{10pt}
+\AtBeginDocument{\addtocontents{toc}{\protect\setlength{\parskip}{5pt}}}
+\usepackage{fourier}    		 
+
+%% Bibliography
+\usepackage{natbib,fancybox,url,color}
+\definecolor{MyBlue}{rgb}{0,0.2,0.6}
+\definecolor{MyRed}{rgb}{0.4,0,0.1}
+\definecolor{MyGreen}{rgb}{0,0.4,0}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref}
+\bibliographystyle{econ}
+
+%% Theorem Environment
+\theoremstyle{definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{corollary}[theorem]{Corollary}
+\usepackage{mathtools}
+\usepackage{\CiteMathPackage}
+
+\begin{document}
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+%?? Title
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Comparative Advantage, Learning, and Sectoral Wage Determination, Journal of Labor Economics, 2005}
+\author{Wenzhi Wang \thanks{This note is written in my MPhil period at the University of Oxford.} } 
+\date{\today}
+\maketitle
+
+\citet{gibbons2005}
+
+\section{Theory and Econometrics}
+
+The four theoretical models analyzed below are special cases of the following model. If worker $i$ is employed in sector $j$ at time $t$, the worker's output is 
+\begin{equation}
+    \label{1}
+    y_{ijt} = \exp\of{X_{it} \b_j + \p_{ijt}},
+\end{equation}
+where $X_{it}$ is a vector of human capital and demographic variables measured by the econometrician and $\psi_{ijt}$ represents determinants of productivity that are not measured by the econometrician. The worker characteristics $X_{it}$ and the slope vector $\b_j$ are known by all labor market participants at the beginning of period $t$; the realized output $y_{ijt}$ is observed by all labor market participants at the end of period $t$. The error term $\psi_{ijt}$ has the components
+\begin{equation}
+    \label{2}
+    \psi_{ijt} = Z_i + b_j \bp{\eta_i + \ve_{ijt}} + c_j,
+\end{equation}
+where $Z_i$ denotes the portion of worker $i$'s productive ability that is equally valued in all sectors, $\eta_i$ denotes the portion that is differentially valued across sectors, and $\ve_{ijt}$ is a random error. The coefficients $\bc{b_j, c_j; j = 1, \ldots, J}$ are fixed and known to all labor market participants. The noise terms $\ve_{ijt}$ are normal with zero mean and precision $h_{ve}$ (i.e., variance $\s_{\ve}^2 = 1/h_\ve$) and are independent of each other and of all the other random variables in the model. 
+
+In developing the theory and econometrics, we treat $Z_i$ and $\eta_i$ differently. We assume throughout that $Z_i$ is observed by all labor market participants; that is the standard case of a fixed effect that the econometrician cannot observe but market participants can. For $\eta_i$, however, we consider two cases: perfect information (no learning by market participants, as with $Z_i$) and imperfect information (learning). 
+
+In the imperfect information case, all labor market participants share symmetric but imperfect information about $\eta_i$. In particular, given their initial information ($Z_i$ and $X_{i1}$), all participants in the labor market share the prior belief that $\eta_i$ is normal with mean $m$ and precision $h$. Subsequent productivity observations, $y_{ijt}$, refine this belief. Information in the labor market therefore remains symmetric and improves over time. For simplicity, we assume that subsequent realizations of measured skills, $X_{it}$, are conditionally independent of $\eta_i$ given $Z_i$ and $X_{i1}$. This assumption is not only convenient but realistic because the major time-varying element of $X_{it}$ is experience. Thus, market participants can compute 
+\begin{equation}
+    \label{3}
+    s_{it} = \frac{\ln y_{ijt} - X_{it} \b_j - Z_i - c_j}{b_j},
+\end{equation}
+which yields $s_{it} = \e_i + \ve_{ijt}$, a noisy signal about the worker's ability that is independent of the worker's sector during period $t$. We call $s_{it}$ the worker's normalized productivity observation for period $t$. Let $s_i^t = \bp{s_{i1}, \ldots, s_{it}}$ denote the history of the worker's normalized productivity observations through period $t$. Then the posterior distribution of $\eta_i$ given history $s_i^t$ is normal with mean 
+\begin{equation}
+    m_t\of{s_i^t} = \frac{hm + h_\ve \bp{s_{i1}+ \ldots+ s_{it}}}{h + t h_\ve}
+\end{equation}
+and precision $h_t = h + t h_{\ve}$.
+
+To close this model, we assume that workers are risk neutral and that there is no cost to firms or workers at the beginning or end of a job (i.e., no hiring, firing, or mobility costs), so we can restrict our attention to single-period compensation contracts. For simplicity, we further restrict attention to contracts that specify the period's wage before the period's production occurs (as opposed to piece-rate contracts). Competition among firms causes each firm in a given sector to offer a given worker a wage equal to the expected value of the worker's output in that sector, given the worker's observed characteristics and history of previous output realizations. 
+
+It is not controversial that workers' productive abilities are imprecisely measured in standard micro data sets. But if unmeasured skills are to explain estimated sector wage differentials, then these skills must be non-randomly allocated across sectors. This, too, is plausible, for example because different sectors use different technologies that require workers' skills in different proportions. But if this unmeasured skill explanation for measured sectoral wage differentials is correct, it suggests that the few skills that are measured in standard micro data sets (hereafter ``measured skills'') should be systematically related to the sector in which the worker is employed. We investigate this prediction about measured skills in our empirical work on occupations and industries in later sections. In this section's discussion of econometric issues, however, we confine our attention to estimating the role of unmeasured skills. 
+
+\subsection{Sorting without Comparative Advantage}
+
+In this subsection, we ignore the possibility of comparative advantage by assuming that $b_j = b$ for every $j$, so that a worker's unmeasured ability is $Z_i + b \eta_i$ and is equally valued in every sector. Continuing in this vein, we also assume in this section that $\b_j = \b$ for every $j$. But we allow the intercepts $c_j$ to vary by sector, in keeping with the possibility that measured sector premia may reflect true sector effects. Of course, all else constant, jobs in sectors with high values of $c_j$ may be more attractive (depending on the source of $c_j$, such as rent sharing vs. compensating differentials). If some sectors are more attractive, issues such as queuing and rationing arise. Because our main interest is in the richer model with comparative advantage in the next section, we do not formally address queuing or rationing here. 
+
+In the perfect information case without comparative advantage, all firms know that the worker's ability is $Z_i + b \eta_i$. As always, the wage offered to worker $i$ by firms in sector $j$ in period $t$ is the worker's expected output in that sector, but the only uncertainty in this case is the error term $b \ve_{ijt}$ in (\ref{2}). Recall that if $\log \t$ is normally distributed with mean $\mu$ and variance $\s^2$, then $\E\of{\t} = \exp\bc{\mu + (1/2)s^2}$. Therefore, the log wage offered to worker $i$ in sector $j$ in period $t$ is 
+\begin{equation}
+    \label{3}
+    \ln w_{ijt} = X_{it} \b + Z_i + b \eta_i + c_j + (1/2) b^2 \s_\ve^2.
+\end{equation}
+
+Turning to the imperfect information case without comparative advantage, in each period, firms in sector $j$ bid worker $i$'s wage up to the worker's expected output in that sector (conditional on the publicly observable information available at that date), so the log wage is 
+\begin{equation}
+    \label{6}
+    \ln w_{ijt} = X_{it} \b + Z_i + b m_{i, t-1} + c_j + (1/2) b^2 \s_t^2 ,
+\end{equation}
+where $m_{i, t-1}$ is shorthand for $m_{t-1}\of{s_i^{t-1}}$ and $\s_t^2 = (h + t h_\ve)/\bc{h_\ve\bs{h + \bp{t-1}h_\ve}}$. Note that $\s_t^2$ converges to $\s_\ve^2$, the corresponding variance term in equation (\ref{5}), as the number of periods $t$ goes to infinity. Also, in both the perfect and the imperfect information cases, the worker's ability $\eta_i$ is unmeasured by the econometrician (as in $Z_i$); in the latter case, $\eta_i$ is also unobserved by labor market participants (unlike $Z_i$). Note that, since $t$ represents the number of years of experience in the model, the error component $(1/2) b^2 \s_t^2$ will be captured by a function in labor market experience that we include in all estimated models. 
+
+\subsection{Estimation without Comparative Advantage}
+
+
+
+
+
+
+
+
+
+\bibliography{\CiteReference}
+
+
+
+
+
+\end{document}
