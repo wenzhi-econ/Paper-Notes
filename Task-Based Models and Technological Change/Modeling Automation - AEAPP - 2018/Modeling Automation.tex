@@ -1,5 +1,8 @@
 \documentclass[12pt]{article}
 
+\newcommand{\CiteMathPackage}{../../math}
+\newcommand{\CiteReference}{../reference.bib}
+
 % Packages
 \usepackage{setspace,geometry,fancyvrb,rotating}
 \usepackage{marginnote,datetime,enumitem}
@@ -41,7 +44,7 @@
 \newtheorem{example}{Example}
 \newtheorem{corollary}[theorem]{Corollary}
 \usepackage{mathtools}
-\usepackage{../../math}
+\usepackage{\CiteMathPackage}
 
 \begin{document}
 
@@ -53,6 +56,8 @@
 \author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
 \date{\today}
 \maketitle
+
+\citet{acemogluModelingAutomation2018}
 
 \section{Factor-Augmenting Technologies}
 
@@ -226,7 +231,7 @@ A version of this framework with workers with heterogeneous skills specializing 
 It is difficult to analyze the issue of excessive automation with factor-augmenting technologies. Modeling automation as the substitution of machines for tasks previously performed by labor, on the other hand, shows that there may be excessive automation because of subsidies to capital or a divergence between the equilibrium wage rate and the social opportunity cost of labor.
 
 
-\bibliography{../../reference.bib}
+\bibliography{\CiteReference}
 
 
 

@@ -1,5 +1,8 @@
 \documentclass[12pt]{article}
 
+\newcommand{\CiteMathPackage}{../../math}
+\newcommand{\CiteReference}{../reference.bib}
+
 % Packages
 \usepackage{setspace,geometry,fancyvrb,rotating}
 \usepackage{marginnote,datetime,enumitem}
@@ -41,7 +44,7 @@
 \newtheorem{example}{Example}
 \newtheorem{corollary}[theorem]{Corollary}
 \usepackage{mathtools}
-\usepackage{../../math}
+\usepackage{\CiteMathPackage}
 
 \begin{document}
 
@@ -54,7 +57,7 @@
 \date{\today}
 \maketitle
 
-
+\citet{acemogluSkillsTasksTechnologies2011}
 
 %??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
 %?? section 1. New Empirical Regularities
@@ -472,7 +475,7 @@ for given $I_H$, and this expression has the same relative effective demand and 
 
 
 
-\bibliography{../../reference.bib}
+\bibliography{\CiteReference}
 
 
 \end{document}
