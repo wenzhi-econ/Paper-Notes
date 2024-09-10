@@ -1,0 +1,257 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Understanding the Scarring Effect of Recessions, American Economic Review, 2022} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{huckfeldtUnderstandingScarringEffect2022}
+
+\section{Introduction}
+
+This paper presents new evidence on the importance of occupation switching for explaining the earnings losses of displaced workers. Using data from the CPS Displaced Worker Supplement and PSID, I show that the cost of job loss in the United States is almost entirely concentrated among workers who find reemployment in lower-paying occupations, and that the incidence of such occupation displacement is higher for workers who are displaced during a recession. To understand these findings, I propose a new model where hiring is endogenously more selective during recessions, forcing some workers to search for jobs in a lower skill occupation. The model accounts for over sixty percent of the present value cost of job loss in expansions and recessions, representing an over three-fold improvement in explanatory power over leading models. The framework also explains the cost of entering the labor market during a recession. 
+
+\section{The Cost and Incidence of Occupation Displacement: Evidence}
+
+\subsection{Immediate wage lossess are higher for occupation switchers}
+
+I first show that workers who are involuntarily displaced from a job and are reemployed into a different occupation suffer larger immediate wage losses than workers who are reemployed into the same occupation.
+
+\subsection{Occupation switching is countercyclical}
+
+Next, I document a new result to the literature: workers displaced during a recession are more likely to switch occupation upon reemployment. 
+
+
+\subsection{Occupation displacement is vertical}
+
+As argued earlier, the previous findings of (i) greater earnings losses among displaced workers who switch occupation, and (ii) countercyclical occupation displacement can be interpreted in terms of vertically ranked occupations. I now show that such an interpretation is supported by the data: the evidence for countercyclical occupation switching and greater immediate earnings lossess for occupation switchers is entirely accounted for by the ranking of occupation by average wage. 
+
+\subsection{Rapid recovery of hours}
+
+Here, I show that there is a rapid recovery of hours among displaced workers, suggesting that the earnings cost of job loss is not due to unstable job attachment. 
+
+\subsection{Earnings losses are persistent for occupation switchers, but not for stayers}
+
+Having established that immediate earnings losses are larger for occupation switchers, I now show that earnings losses for such workers are also more persistent. 
+
+\section{A Model of Unemployment, Occupation, and Selective Hiring}
+
+To understand the facts documented in the previous section, I develop a model of unemployment, occupation, and selective hiring. The model combines elements of a Diamond-Mortensen-Pissarides search and matching model with the \citet{ljungqvistEuropeanUnemploymentDilemma1998} model of human capital accumulation and depreciation. The new feature of my model is that firms posting vacancies for skill-utilizing jobs hire selectively on the basis of skill, unwilling to hire workers with skill below some endogenous threshold. Wages move less than one-for-one with productivity, and hence, firms filling vacancies for skilled jobs are more selective during recessions: given a fall in aggregate productivity, the firm must hire a more skilled worker to earn a non-negative return from maintaining a vacancy. Displaced workers who find reemployment in lower-skill jobs suffer large and persistent earnings losses. The greater occurrence of such displacements during recessions lends cyclicality to the cost of job loss. 
+
+In the model, an occupation is a type of job. \highlightO{I consider two types of jobs: skill-intensive and skill-neutral.} If a worker is employed in a skill-intensive job, output is increasing in the worker's endowment of skill. If a worker is employed in a skill-neutral job, the worker's quantity of skill is irrelevant to production. The quantity of human capital (skill) held by an individual determines whether he is able to search for one or both of the jobs. The worker accumulates skill stochastically, but at different rates in either type of job. While skill is not used for production in the skill-neutral job, it is nonetheless relevant to the worker's expected tenure at the job, as the worker will accumulate skill while employed and eventually search (in expectation) for a skill-utilizing job. 
+
+The stochastic process for human capital accumulation is standard to the literature, e.g., \citet{ljungqvistEuropeanUnemploymentDilemma1998}, except that workers in unemployment are subject to the risk that their skills become obsolete, wherein they draw a new value of human capital from the initial distribution. This feature of the model captures the increasing income disaster risk over the life cycle, but also lends a broader interpretation of the mapping of occupation in the model to occupation in the data. A worker may be displaced from a job as  a machinist (skill-intensive employment); discover during his time in unemployment  that his skills are no longer relevant to new vintages of technology (obsolescence  shock); subsequently find employment as a salesperson (skill-neutral employment);  and then work his way up to a job as a manager (skill-intensive employment). While the notion of occupation in the model is too stylized to directly map to particular occupations in the data, \highlightP{it is general enough to capture such patterns of mobility within and across occupation hierarchies}. 
+
+The model generates an endogenous distribution of workers over skill and the different employment states. \highlightP{But the model remains tractable, in part because firms are restricted to direct any particular vacancy towards a single level of skill.} This ensures that the solution of the model is independent of the distribution of workers, i.e., the model is block recursive. Relative to a typical block recursive model in which the equilibrium schedule of job-finding rates is determined by a complementary slackness condition along a single dimension of worker or match heterogeneity, the equilibrium here is characterized by two such conditions, one each for skill-intensive and skill-neutral jobs. The two complementary slackness conditions are related in a non-trivial manner: firms find it less profitable to direct skill-neutral vacancies towards workers attractive to firms filling skill-intensive vacancies. 
+
+\subsection{Setting}
+
+The model is set in discrete time with an infinite horizon. There is a unit measure of agents (workers). Workers have linear preferences over the consumption good, suffer no disutility of labor, and discount the future by a factor $\b < 1$. Workers are either unemployed, employed in a skill-neutral job, or employed in a skill-intensive job. Jobs are subject to an exogenous destruction probability $\d$. Workers are endowed with $h$ units of human capital (skill). A cumulative distribution function $\l$ gives the measure of workers over human capital and employment. Workers have geometric lifespans: each period a measure $\nu$ of workers die and a measure $\nu$ are born into unemployment. There are two aggregate state variables: productivity $Z$ and the distribution of workers across human capital and employment states, $\l$. $Z$ takes on finite values and evolves according to a first-order Markov chain. 
+
+\subsection{Production and wages}
+\setcounter{equation}{2}
+
+Production occurs within single worker firms. Skill-neutral firms operate a technology where output $y_L$ varies with aggregate productivity $Z$ but not the worker's skill $h$. Skill-intensive firms operate a production technology that is linear in the worker's human capital input $h$ and aggregate productivity $Z$ to produce $y_H$:
+\begin{equation}
+    \label{3}
+    y_L\of{h, Z} = Z, \quad y_H\of{h, Z} = Z h. 
+\end{equation}
+Once a firm and worker are matched, the job type is fixed: a skill-neutral job cannot be converted into a skill-intensive job, and vice versa.
+
+Wages are bargained to divide the additional income that can be generated by the worker and the firm within the period. Workers have a fixed bargaining power, $\eta \in \bp{0,1}$, and firms face a cost of delay $\d$ should the worker and the firm not come to agreement. Wages are given by the following:
+\begin{equation}
+    \label{4}
+    w_L\of{h, Z} = \bp{1-\eta} b + \eta\bp{Z + \g}, \quad w_H\of{h, Z} = \bs{\bp{1-\eta}b + \eta\bp{Z+\g}}h.
+\end{equation}
+The wages correspond to the Generalized Nash Bargaining solution with the following outside options: For a worker employed in a skill-neutral firm, the outside option if negotiations break down is to enjoy home production $b$ and enter the next period still matched to firm. The outside option of the skill-neutral firm is to produce no output that period, incur a fixed cost of delay $\g$, and enter the next period attached to the worker. The outside options of workers and firms in skill-intensive matches are the same, but scaled by the human capital input of the worker.
+
+\subsection{Human capital dynamics}
+
+Human capital lies in an equispaced grid $\Hc$ with lower bound $h^{lb}$ and upper bound $h^{ub}$. New entrants draw an initial value of human capital from a distribution function $F$ with support over the entire grid $\Hc$. 
+
+Workers in skill-intensive and skill-neutral jobs stochastically accumulate human capital. Each period, the human capital endowment of a worker in a skill-intensive (skill-neutral) jobs increases by among $\D_\Hc$ with probability $\pi_H$ ($\pi_L$). Hence, for a worker with human capital $h$ employed in a job of type $I$, human capital evolves as the following:
+\begin{equation}
+    \label{5}
+    h^{\prime}=\left\{\begin{array}{ll}
+        h+\Delta_{\mathcal{H}} & \text { with probability } \pi_i \\
+        h & \text { with probability } 1-\pi_i
+        \end{array} \quad i=L, H\right.
+\end{equation}
+
+
+Workers in unemployment face two sources of human capital risk: \highlightB{obsolescence} and \highlightB{gradual depreciation}. With probability $\xi$, a worker who enters the period with human capital $h$ finds his skills rendered obsolete and must draw a new value of human capital $h_0$ from a distribution $F^{o}\of{\cdot; h}$ constructed from the initial distribution $F$, defined as 
+\begin{equation}
+    \label{6}
+    F^{o}\of{h_0; h} = \frac{1}{F\of{h}} \int_{h^{lb}}^{h_0} d F\of{h^{\prime}} d h^{\prime}. 
+\end{equation}
+The upper bound for the support of the distribution is the beginning-of-period level of human capital, and the lower bound is hlb. The construction of the distribution  ensures that workers do not gain skill from an obsolescence shock. Immediately after the realization of the obsolescence shock (and within the same period), the worker faces a probability $\pi_U$ of losing a quantity $\D_\Hc$ of human capital. Hence, the human  capital of a workers in unemployment who enters the period with human capital $h$ evolves according to the following:
+\begin{equation}
+    \label{7}
+    h^{\prime}= \begin{cases}h_0 & \text { with probability } \xi\left(1-\pi_U\right) \\ h_0-\Delta_{\mathcal{H}} & \text { with probability } \xi \pi_U \\ h & \text { with probability }(1-\xi)\left(1-\pi_U\right) \\ h-\Delta_{\mathcal{H}} & \text { with probability }(1-\xi) \pi_U\end{cases}
+\end{equation}
+
+\subsection{Search and matching}
+
+Workers must be matched with firms in order to produce. Firms direct vacancies towards submarkets specific to a single level of human capital, i.e., search is segmented in $h$. For a given level of human capital, search is directed: workers choose whether to search for either skill-neutral or skill-intensive employment. 
+
+Given aggregate productivity $Z$ and the worker distribution $\l$, the number of vacancies for a worker of skill $h$ in the skill-neutral and skill-intensive submarkets are $v_L\of{h, Z, \l}$ and $v_H\of{h, Z, \l}$. Searchers $s_L\of{h, Z, \l}$ for skill-neutral jobs consist only of workers searching from unemployment, whereas searchers $s_H\of{h, Z, \l}$ for skill-intensive vacancies comprise both unemployed workers and workers in skill-neutral jobs. Workers in skill-neutral jobs search with the same efficiency as unemployed workers and hence never quit to unemployment to improve search outcomes.
+
+The total number of matches generated within a particular submarket $m_i\of{h, Z, \l}$, $i = L, H$, is determined by a constant return to scale matching function:
+\begin{equation}
+    \label{8}
+    m_i\of{h, Z, \l} = \phi_i s_i\of{h, Z, \l}^{\s} v_i\of{h, Z, \l}^{1 - \s}, \; i = L, H.
+\end{equation}
+The job-finding probability $p_i(h, Z)$ for a worker with human capital $h$ searching for a job of type $i$ when the aggregate state is $Z$ and $\l$ and the corresponding vacancy filling probability $q_i(h, Z)$ are given as the following:
+\begin{equation}
+    \label{9}
+    p_i(h, Z)=\frac{m_i(h, Z, \lambda)}{s_i(h, Z, \lambda)}, \quad q_i(h, Z)=\frac{m_i(h, Z, \lambda)}{v_i(h, Z, \lambda)}, \quad i=L, H
+\end{equation}
+Job-finding and vacancy-filling probabilities can be expressed as functions of the ratio  of vacancies to unemployment within each submarket, i.e. the market tightness ratios $\t_i(h, Z), i = L, H$. Given the block recursive structure of the model, market tightness ratios -- and hence job-finding and vacancy-filling probabilities -- are independent of the worker distribution $\l$.
+
+\subsection{Timing}
+
+A single period is divided into three sub-periods. In the first subperiod, a measure $\nu$ of workers die and are replaced by new entrants, and new values of productivity $Z$ and human capital of $h$ are realized. Search and matching occurs in the second sub-period. In the third and final sub-period, matches produce and wages are paid to workers.
+
+\subsection{Worker and firm value functions}
+
+The value functions of workers and firms are written in terms of the value in the third sub-period, after search and matching has occurred.
+
+The decision of workers is whether to search for a skilled or unskilled job from unemployment. Let $U\of{h, Z}$ be the value of a worker of skill $h$ in unemployment when aggregate productivity is $Z$. Let $U_H\of{h, Z}$ be the value to a worker with skill $h$ of searching in the skill-intensive market when aggregate productivity is $Z$; and let $U_L\of{h, Z}$ be the corresponding value of searching in the skill-neutral market. Then, 
+\begin{equation}
+    \label{10}
+    U_i\of{h, Z} = p_i\of{h, Z} W_i\of{h, Z} + \bs{1 - p_i\of{h, Z}} U\of{h, Z}, \; i = L, H 
+\end{equation}
+and 
+\begin{equation}
+    \label{11}
+    U\of{h, Z} = b + \bp{1 - \nu} \b \E \max \bc{U_L\of{h^{\prime}, Z^{\prime}}, U_H\of{h^{\prime}, Z^{\prime}}},
+\end{equation}
+subject to the law of motion for $h$ and $Z$. The period utility of not working is given by $b$. 
+
+For levels of human capital above a given cutoff $h^{*}\of{Z}$, the value associated with a skill-intensive job compensates for the lower job-finding probability, and the worker only searches for skill-intensive jobs:
+\begin{equation}
+    \label{12}
+    h^{*}\of{Z} = \min \bc{h \mid U_H\of{h, Z} \geq U_L\of{h, Z}}.
+\end{equation}
+An unemployed worker previously employed in a skill-intensive job might optimally search for a skill-neutral job if he faces a low (or zero) probability of finding a skill-intensive job, due to increased selectivity by firms caused by either a drop in productivity $Z$ or skill depreciation. Such an event corresponds to displacement to a lower paying occupation in the data. 
+
+Let $W_H\of{h, Z}$ denote the value of employment in a skill-intensive job. Then, 
+\begin{equation}
+    \label{13}
+    W_H\of{h, Z} = w_H\of{h, Z} + \bp{1 - \nu} \b \E\bc{\d U\of{h^{\prime}, Z^{\prime}}, \bp{1-\d} W_H\of{h^{\prime}, Z^{\prime}}}
+\end{equation}
+subject to the law of motion for $h$ and $Z$. Let $W_L\of{h, Z}$ be the value of employment in a skill-neutral job for a worker with human capital $h$ when aggregate productivity is $Z$. Then, 
+\begin{equation}
+    \label{14}
+    \begin{aligned}
+        W_L(h, Z) & =w_L(Z)+(1-\nu) \beta \mathbb{E}\left\{\delta U\left(h^{\prime}, Z^{\prime}\right)+\left(1-p_H\left(h^{\prime}, Z^{\prime}\right)\right)(1-\delta) W_L\left(h^{\prime}, Z^{\prime}\right)\right. \\
+        & \left.+p_H\left(h^{\prime}, Z^{\prime}\right)(1-\delta) \max \left\{W_H\left(h^{\prime}, Z^{\prime}\right), W_L\left(h^{\prime}, Z^{\prime}\right)\right\}\right\}
+    \end{aligned}
+\end{equation}
+subject to the law of motion for $h$ and $Z$. 
+
+The value of a skill-intensive firm employing a worker of skill $h$ when aggregate productivity is $Z$ is given by $J_H\of{h, Z}$, where 
+\begin{equation}
+    \label{15}
+    J_H\of{h, Z} = Zh - w_H\of{h, Z} + \bp{1-\nu} \b \E\bc{\bp{1-\d} J_H\of{h^{\prime}, Z^{\prime}}}
+\end{equation}
+subject to the law of motion for $h$ and $Z$. As period profits $Zh - w_H\of{h, Z}$ are increasing in $h$, it is straightforward to see that the value of a skill-intensive firm is increasing in $h$, implying increasing job-finding probabilities in $h$.
+
+Let $J_L\of{h, Z}$ be the value of a skill-intensive firm employing a worker of skill $h$ when aggregate productivity is $Z$, where 
+\begin{equation}
+    \label{16}
+    J_L\of{h, Z} = Z - w_L\of{Z} + \bp{1-\nu} \b \E\bc{\bp{1-\d} \bp{1 - p_H\of{h^{\prime}, Z^{\prime}}} J_L\of{h^{\prime}, Z^{\prime}}}
+\end{equation}
+subject to the law of motion for $h$ and $Z$. Although output $y_L$ does not depend on the  worker's endowment of human capital, the probability of match separation does, as the job-finding probability for workers searching for high-skill jobs will be increasing in $h$. Hence, the value of a skill-neutral job to the firm is decreasing in the skill endowment of the worker, implying decreasing job-finding rates in human capital for skill-neutral jobs.
+
+\subsection{Countercyclical selective hiring and free entry}
+
+Firms pay a period cost $\kappa_L$ ($\kappa_H$) to post a vacancy in a skill-neutral (skill-intensive) submarket. Free entry drives the value of posting a vacancy in any market to zero, reflected in a complementary slackness condition:
+\begin{equation}
+    \label{17}
+    J_i(h, Z) \leq \frac{\kappa_i}{q_i(h, Z)},\quad \theta_i(h, Z) \geq 0, \quad i=L, H
+\end{equation}In active submarkets, the cost of $\kappa_i$ of posting a vacancy for a job of type $i$ is equal to expected value associated with posting a vacancy, $q_i\of{h, Z} J_i\of{h, Z}$. In inactive submarket, I assume $\t_i\of{h, Z} = 0$. 
+
+The core economic mechanism of the model -- \highlightP{countercyclical selective hiring within skilled occupations} -- is summarized by the two complementary slackness conditions described by equation (\ref{17}). Firms filling a vacancy for a skill-intensive job must receive a value $J_H\of{h, Z}$ that satisfies free entry. In particular, the present value of the job to the firm must at least recoup the period fixed cost of posting a vacancy, $\kappa_H$. But given that $J_H\of{h, Z}$ is increasing in $h$, there exists a value $\undl{h}\of{Z}$ such that the value of posting a vacancy is always negative, and thus skill-intensive vacancies are not posted for $h < \undl{h}\of{Z}$:
+\begin{equation}
+    \notag 
+    J_H(h, Z)<\kappa_H, \theta_H(h, Z)=0 \text { for all } h<\underline{h}(Z) \text {. }
+\end{equation}
+A similar condition holds for skill-neutral jobs. Given that $J_L(h, Z)$ is decreasing in $h$ due to the search activity of workers, there exists some $\ol{h}(Z)$ such that firms do not post skill-neutral vacancies for $h$ above $\ol{h}(Z)$:
+\begin{equation}
+    \notag 
+    J_L(h, Z)<\kappa_L, \theta_L(h, Z)=0 \text { for all } h>\ol{h}(Z) \text {. }
+\end{equation}
+Hence, only unemployed workers with human capital h in the interval $\bs{\undl{h}\of{Z}, \ol{h}\of{Z}}$ have a non-degenerate search decision. Therefore, $\undl{h}\of{Z} < h^{*}\of{Z} < \ol{h}\of{Z}$.
+
+The optimal skill cutoff $h^*\of{Z}$ varies with aggregate conditions. Should productivity $Z$ fall, the firm's value of a high skill match $J_H\of{h, Z}$ falls for all $H$. As is  typical in a DMP model, firms respond by reducing vacancy postings, and hence, vacancy-filling probabilities rise and job-finding probabilities fall. \highlightP{Beyond posting fewer vacancies, firms also adjust along an extensive margin, terminating vacancy creation for a group of workers for whom the job value $J_H\of{h, Z}$ no longer recoups the expected present value cost of posting a vacancy.} This implies an increase in the minimum skill threshold $\undl{h}\of{Z}$ necessary for maintaining a skill-intensive vacancy, excluding a wider population of workers from searching for skilled jobs -- and thus making it more probable that a worker who is separated from a skilled job to unemployment will be forced to search for an unskilled job. These outcomes -- the fall in job-finding probabilities $p_H(h, Z)$ and rise in the minimum skill threshold $\undl{h}\of{Z}$ increase expected worker retention at skill-neutral jobs, allowing for an increase in the  maximum threshold for unskilled jobs $\ol{h}\of{Z}$. Hence, the optimal skill cutoff $h^*\of{Z}$ for  workers searching from unemployment also increases. The responsiveness of $h^*\of{Z}$ to changes in productivity $Z$ dictates the cyclicality of selective hiring, and thus in part determines the cyclicality of occupation displacement that can be generated by the  model.
+
+\subsection{Equilibrium}
+
+An equilibrium is a schedule of market tightness for the skill-neutral market, a schedule of market tightness for the skill-intensive market, and an optimal skill cutoff such that the free entry conditions are satisfied and the optimal skill cutoff solves the problem of the unemployed worker, taking market tightness as given. 
+
+\section{Calibrating the Model}
+
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
