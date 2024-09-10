@@ -1,0 +1,86 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}} \usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf The Industrial Mobility of Displaced Workers, Journal of Labor Economics, 1993} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{fallickIndustrialMobilityDisplaced1993}
+
+\section{Introduction}
+
+\section{Theoretical Framework}
+
+Consider an individual with characteristics $X_i$, who has been displaced from a job and is unemployed at the beginning of period $t$. The worker has available an endowment of search ``intensity'' that he may devote to seeking a job during this period or to other activities. ``Intensity'' may refer to time, resources, or effort. For simplicity, think of it as the available time that may be devoted to search. The worker may allocate the time he devotes to search between two sectors of the economy: the industry from which he was displaced (which I shall call the ``old'' industry) and the set of all other industries (which I shall designate the ``new'' industry). 
+
+Let the proportion of available time during period $t$ that the worker devotes to search in industry $j$ be denoted by $s_j\of{t, X_i}$, where $j = $ old, new. Let the length of the period be sufficiently small that the probability of receiving more than one job offer in a single period can be assumed to be zero. If the worker were to devote all of his available time in period $t$ to searching in industry $j$, then the (marginal) probability that he would obtain a job offer in period $t$ from industry $j$ is $\a_j\of{t, X_i}$, which may loosely be called the offer-arrival rate. Assume further that in general the (marginal) probability that the worker will receive an offer in period $t$ from industry $j$ is $\a_j\of{t, X_i} \s\of{s_j\of{t, X_i}}$, where $\s$ is an increasing concave function with $\s\of{0} = 0$ and $\s\of{1} = 1$. The rate of current compensation associated with a job offer (which I will denote as $w$ and refer to simply as the wage) is randomly drawn from a (marginal) distribution $F_j\of{w; X_i}$. 
+
+Assume that for each industry $j$ in each period $t$, the worker has a reservation wage $w_j^r\of{t, X_i}$ such that the worker will accept a job offer in industry $j$ with wage $w$ if and only if $w \geq w_j^r\of{t, X_i}$. Reservation wages and search intensities constitute the worker's search strategy. They will be influenced by the $\a$ and $F$ in both industries in addition to $t$ and $X_i$. In this structure, the probability that a worker who was unemployed at the beginning of period $t$ will make a transition from unemployment to employment in industry $j$ during period $t$ (i.e., the hazard function) is 
+\begin{equation}
+    \label{1}
+    h_{i,j}\of{t} = \a_j\of{t, X_i} \s\of{s_j\of{t, X_i}} \bs{1 - F_j\of{w_j^r\of{t, X_i}; X_i}}.
+\end{equation}
+
+Equation (\ref{1}) makes clear how changes in employment prospects (specifically, the offer-arrival rates and wage-offer distributions) would affect the hazard rates, holding search strategies constant, and how changes in the elements of the search strategies would affect the hazard rates, holding the employment prospects constant. If the search strategies were not to  change, that is, if $s_j$ and $w_j^r$ were held constant, an increase in the offerarrival rate $\a_j$ or an improvement in the wage-offer distribution $F_j$ would increase the hazard rate $h_{i,j}$, and reduce the duration of unemployment. However, an increase in $\a_j$ or an improvement in $F_j$ can also be expected to increase $s_j$ and $w_j^r$, but such reactions are not necessary in order to induce a positive relationship between, say, $\a_j$ and $h_{i,j}$. For this reason, a one-sector model does not yield testable hypotheses about the influence of industry conditions on search strategies in the absence of information on search behavior itself. In such a model, any observed change in $h_{i,j}$ associated with a change in industry conditions ($\a_j$ or $F_j$) must be attributed jointly to the conditions themselves and their influence on search behavior, not separately to one or the other. 
+
+In contrast, changes in the prospects for employment in the ``other'' industry, $\a_k$ or $F_k$, where $k \neq j$, would not affect $h_{i,j}$ at all if the search strategies did not change. For example, any relationship between $\a_k$ and $h_{i,j}$ must be due to the way in which search in industry $j$ reacts. I exploit this consideration in order to make inferences about search behavior from data on reemployment outcomes and to disentangle the indirect effect of a change in employment prospects on hazard rates (i.e., the induced change in the search strategy) from the more obvious direct effects. In other words, the two-sector model yields testable hypotheses that its one-sector counterpart cannot. 
+
+It is intuitively sensible that any improvement in the prospects for employment in industry $k$ should lead to a reduction in search intensity devoted to search in industry $j$ and an increase in the reservation wage for jobs in that industry. 
+
+\bibliography{\CiteReference} 
+
+\end{document}
