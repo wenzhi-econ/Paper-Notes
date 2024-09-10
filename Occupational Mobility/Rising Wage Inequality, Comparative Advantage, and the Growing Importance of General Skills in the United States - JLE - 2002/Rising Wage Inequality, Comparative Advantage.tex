@@ -1,0 +1,117 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Rising Wage Inequality, Comparative Advantage, and the Growing Importance of General Skills in the United States, Journal of Labor Economics, 2002} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{gouldRisingWageInequality2002a}
+
+\section{Introduction}
+
+The purpose of this paper is to use a model of comparative advantage to study how the distribution of income is determined and how it is changing over time. The existing empirical literature has concentrated on decomposing the inequality trends using aggregate OLS wage regressions in repeated cross-sectional data. However, this approach lacks an economic model for how the level of inequality is determined in the economy and for how inequality is affected by technological change. We could infer a model in which there is one type of ability in the economy, and, by definition, the distribution of this ability determines the distribution of wages. It follows that the upward trend in inequality is cased by technology increasing the ability of those at the top of the distribution relative to those at the bottom. 
+
+However, this approach ignores the intuition that various types of jobs require different types of skills and aptitudes. For example, the skills that determine a worker's ability as a doctor are very different from those that are used by factory workers. Consequently, those who are good at being a doctor may not be very productive factory workers and vice versa. Workers will sort themselves into occupations according to their comparative advantage, but this will only be important if there are real differences in the way that skills are valued across sectors. \highlightO{The role of technology in this framework is to determine whether the types of attributes valued highly in one sector are valued similarly in the other sectors.} If the technology is the same across sectors, then the correlations of abilities across sectors will be equal to one, and there really is only one aggregate sector. Furthermore, the way in which skills are valued within sectors can change over time, as technological improvements emphasize different skills on the job. 
+
+The contribution of this article, therefore, is to exploit the possibility that the economy is better described by multiple sectors. A two-sector model is presented in which each worker is endowed with a level of ability for each sector. Workers choose their sector according to their tastes and abilities. The self-selection of workers into occupations, in turn, determines the level of inequality within each sector and in the aggregate. The population distribution of ability in each sector is characterized by their means, variances, and covariances across sectors. The population distribution of ability in each sector is what we would observe if workers were sorted into that sector in a random fashion. However, since workers maximize their utility, workers will tend to choose sectors that cater to their personal strengths. This pursuit of comparative advantage leads to an observed distribution of ability in each sector that differs from the population distribution. The observed distribution represents just a portion of the population distribution and, therefore, has a lower variance. Furthermore, the observed distribution of ability in each sector is shown to be determined by the population means, variances, and covariances in abilities across sectors. As technological innovations alter the way that skills are valued on the job, these parameters will change over time and will affect the observed level of inequality within each occupation.
+
+Using repeated cross-sectional data from CPS, \highlightPP{workers are divided into three broas occupational sectors (professional, services, and blue-color)}. The parameters of the population distributions of abilities in all three sectors are estimated over time. The importance of modelling the comparative advantage of workers into occupations is tested by comparing the observed variance in ability (after selection) with the population variance (what would occur if workers were randomly assigned to sectors). 
+
+The results indicate that this ratio is rising over time despite the fact that both the numerator and denominator are increasing over time. The observed level of inequality is growing faster than the variances of sectoral abilities. The reason for this stems from the trend in the correlations of abilities across sectors. \highlightP{The results show an upward trend in the correlations across each of the three occupations.} This suggests that the same types of skills are becoming more important within all three sectors, so that the economy is heading in the direction of a one-sector economy in which the role of comparative advantage is becoming less important. In this manner, the trend in inequality is being driven by technology, which not only disperses the variances of abilities but, more importantly, changes the correlations in abilities across sectors. 
+
+
+\section{The Data and the Inequality Trends}
+
+\section{A Model of Comparative Advantage}
+
+To model comparative advantage, the economy is viewed as a composition of heterogeneous workers who choose their occupations according to their abilities and preferences. Taking the characteristics of workers as given, we can see how these characteristics are priced differently across sectors and how these prices are changing over time. 
+
+In order to simplify the presentation and illustrate the relevant points, let us assume that agents choose between two market sectors, lawyers and professional athletes, and that their performances are solely determined by their wages. In other words, utility maximization is assumed to be equivalent to wage maximization. Assume that each person is endowed with a skill vector $x$ that is priced out differently in the two market sectors. Let $T_i\of{x}$ be the task function that maps the skills of workers into their level of sector $i$ specific ability. For example, $T_i\of{x}$ takes a person's skills in math, reading, speaking, strength, motivation, coordination, cunning, and so forth and maps them into that person's ability to be a lawyer or an athlete. Notice that $T_i\of{x}$ is the technology that determines how various skills relate to sector-specific ability and that this function is sensitive to technological improvements. If we let $\pi_i$ be the unit task price of sector $i$-specific ability that is determined competitively in the market, it follows that a worker chooses to work in sector $i$ over sector $j$ if 
+\begin{equation}
+    \label{1}
+    \pi_i T_i\of{x} \geq \pi_j T_j\of{x}, i \neq j; i, j = 1, 2.
+\end{equation}
+The log wage in sector $i$ for a worker with skill endowment $x$ is given by 
+\begin{equation}
+    \label{2} 
+    \begin{aligned}
+        & \ln w_i(x)=\ln \pi_i+\ln T_i(x) \\
+        & \ln w_i(x)=\ln \pi_i+t_i(x)
+    \end{aligned}
+\end{equation}
+where $t_i\of{x}$ is the natural log of the function $T_i\of{x}$. Assume that the distributions of skill endowments and the task functions are such that the distributions of abilities are log-normalled distributed. Specifically, the population distribution of log ability in sector $i$ is characterized by 
+\begin{equation}
+    \notag 
+    t_i \sim N\of{\mu_i, \s_{ii}}, i = 1, 2,
+\end{equation}
+where the covariance between the log ability to be a lawyer and an athlete is given by $\s_{12}$. Log wages in each sector can then be written as 
+\begin{equation}
+    \label{3}
+    \begin{aligned}
+        & \ln w_1=\ln \pi_1+\mu_1+u_1 \\
+        & \ln w_2=\ln \pi_2+\mu_2,+u_2
+    \end{aligned}
+\end{equation}
+where $u_1$ and $u_2$ are normally distributed random variables with a mean zero and a variance structure matching the description above.
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
