@@ -1,0 +1,90 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}} \usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Job Seekers' Perceptions and Employment Prospects:  Heterogeneity, Duration Dependence and Bias, American Economic Review, 2021} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{muellerJobSeekersPerceptions2021}
+
+\section{Introduction}
+
+A ubiquitous empirical finding in the literature is the observed depreciation in job-finding rates by duration of unemployment. As it is crucial for formulating policy responses, understanding why employment prospects are worse for the long-term unemployed has been the topic of a long literature. In theory, \highlightP{long-term unemployment may reduce a worker's chances to find a job (e.g., due to skill depreciation or duration-based employer screening)}, \highlightP{but less employable workers also select into long-term unemployment}. Empirically, separating the role of duration-dependent forces from heterogeneity across job seekers has been a challenge until today. Direct evidence on the potential role of heterogeneity has been particularly limited. 
+
+This paper takes a novel approach to address this question, using newly available data on unemployed job seekers' perceptions about their employment prospects together with actual labor market transitions. We present a conceptual framework that takes advantage of our ability to jointly observe job seekers' perceptions and actual job finding to identify heterogeneity in true job-finding rates and separate dynamic selection from true duration dependence in explaining the observed decline in job finding. \highlightP{The key idea underlying identification in this framework is that the covariance between perceptions and actual job finding helps uncovering the extent of ex-ante heterogeneity in true job-finding probabilities.} The predictable variation in job finding provides a lower bound on the ex-ante heterogeneity in job finding. Beliefs can also be used in combination with a model that relates job seekers' elicited beliefs to their job-finding probability to estimate the heterogeneity in the latter. 
+
+Our analysis goes further in two important dimensions. Both are key to uncover the heterogeneity in job finding that contributes to the observed duration dependence and are relevant by themselves. First, in addition to idiosyncratic error in the beliefs, \highlightO{we allow job seekers' beliefs to systematically over- or under-react to differences in job finding, either across job seekers or over the unemployment spell}. This bias affects the covariance between participants and job finding and thus helps uncovering the heterogeneity in job finding from that covariance. We identify this bias by leveraging variation in job-finding rates at different unemployment duration. Second, \highlightO{we allow for transitory differences in job seekers' job finding within a spell (e.g., temporary spells of reduced search, vacancy supply shocks)}, which do not contribute to the observed decline in job-finding rates through dynamic selection. We show that we can separately identify permanent and transitory differences in job finding using the covariances between job finding and contemporaneous vs. lagged beliefs. 
+
+We turn to the data to estimate the relevant moments in our conceptual framework and document  a number of novel facts about job seekers' perceptions. We use two distinct surveys, which elicited unemployed job seekers' beliefs about their chances of re-employment -- which we thus refer to as the \highlightB{elicited or perceived job-finding probability}.
+
+The empirical analysis provides three main results. First, the perceived job-finding probabilities significantly and strongly predict actual job finding at the individual level. This holds even when we  control for a rich set of observable co-variates. Moreover, we find that the covariances of job finding with contemporaneous vs. lagged  beliefs are of similar size, suggestive of the persistence in job seekers' prospects.
+
+Second, comparing the perceived and actual job finding across job seekers, we confirm in our data of an overall optimistic bias, but furthermore, we find that the bias rises strongly with unemployment duration. Hence, the long-term unemployed substantially over-estimate their probability of finding a job. We use the under-reaction in beliefs to  inform our model of beliefs, and find that -- combined with the high covariance between beliefs and job  finding -- it suggests that potentially all of the observed declined in job finding can be explained by dynamic selection.
+
+Third, when using only within-person variation, we find that, if anything, job seekers report slightly higher job-finding probabilities the longer they are unemployed. This result is perhaps surprising, given the large empirical literature trying to identify the true duration dependence in job finding and often arguing that it is negative. It is consistent, however, with our reduced-form analysis that finds substantial heterogeneity in job finding, thus leaving limited scope for true negative duration dependence. 
+
+To jointly estimate the heterogeneity and dynamics of the true and perceived job-finding rates, we propose a statistical model that allows us to infer the parameters of interest with exact equivalents of the moments in the data. Our model can allow for a differential response of beliefs to cross-sectional and longitudinal variation in job finding, using both changes in the means of perceived and true job finding and their covariances over the spell. We prove the semi-parametric identification of a stylized two-period version of the model and verify that the identification arguments hold up in the estimation of the fully-specified dynamic model, showing how parameter estimates change with the empirical moments. 
+
+The estimates from our statistical model confirm the substantial heterogeneity in true job-finding rates, accounting for almost all of the observed decline in job-finding rates over the spell of unemployment ($84.7$ percent; s.e. $36.4$). True duration dependence explains the remainder and thus plays a limited role, also in comparison to the importance it has been attributed in prior work. The estimation also confirms the under-response of job seekers' beliefs to variation in job finding. Job seekers with a high underlying job-finding rate tend to be over-pessimistic, whereas job seekers with a low job-finding rate are over-optimistic. The latter remain unemployed longer, but they do not revise their beliefs downward. In the absence of true duration dependence in job finding, this explains why the long-term unemployed are over-optimistic. 
+
+We finally study how the under-action in job seekers' perceptions itself can contribute to the observed decline in job finding and the incidence of long-term unemployment. To this purpose, we set up a job search model a la \citet{mccallEconomicsInformationJob1970}, introducing heterogeneity and true duration dependence in job-offer rates and allowing for biased beliefs. The key mechanism that we highlight in this structural model is that job seekers' behavior mitigates the mechanical effect of differences in job offer rates on job-finding rates, but only when these differences are perceived as such. If perceptions under-respond to differences in job-offer rates, either across job seekers or over the unemployment spell, the resulting differences in job-finding rates will be amplified. The larger variation in job finding leads to a stronger decline in the observed job finding. To quantify the impact on the incidence of long-term unemployment, we calibrate the model with moments from our data and the statistical model. Correcting the biases in beliefs reduces the share of workers who are unemployed for longer than $6$ months, by $2-3$ percentage  points.
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
