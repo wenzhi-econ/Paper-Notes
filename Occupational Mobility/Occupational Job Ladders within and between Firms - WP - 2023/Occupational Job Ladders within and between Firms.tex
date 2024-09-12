@@ -1,0 +1,85 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Occupational Job Ladders within and between Firms, Working Paper, 2023} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{forsytheOccupationalJobLadders2023}
+
+\section{Introduction}
+
+\section{Theories of Occupational Mobility}
+
+There are three primary reasons why individuals may change occupations. First, there may be congestion in the search process \citep{burdettWageDifferentialsEmployer1998} or slot-constraints within the firm \citep{demouginCareersOngoingHierarchies1994}. Both processes prevent individuals from immediately transitioning to their most preferred match. Second, there may be horizontal sorting across occupations, and workers may learn on-the-job whether or not they are a good fit. If they get good news, they will continue to invest in occupation and stay put. However, if they learn it is not a good fit, they may choose to try another career path \citep{papageorgiouLearningYourComparative2014}. Third, there may be general human capital and ability that leads workers to sort between occupations vertically, with the highest ability workers optimally matching with high-ranked occupations \citep{gibbonsComparativeAdvantageLearning2005}. In this case, as workers gain skills or learn about their ability, they will move up or down the occupation ladder. 
+
+Each class of models leads to different empirical predictions about the direction of mobility and sorting. In the case of congestion, we would not expect workers to make negative occupational moves and we would expect wages to increase upon mobility. In the case of horizontal learning and sorting, we would expect occupational movers to be negatively selected from their prior occupation, since individuals will only move if they find out the job is not a good fit. Further, they are likely to be low earners in their new occupation, since they are unable to transfer skills and investments across occupations. 
+
+Finally, in the case of a vertical job ladder, we may see upward or downward mobility, depending on the learning process and human capital accumulation and decay. If individuals are moving up and down an effective ability ladder, then individuals are likely to be descending the ladder before a downward move and rising the ladder before an upward move. This means that before a job change, someone who moves down is more likely to have been a low earner for the occupation, while someone who moves up is more likely to have been a high earner for the occupation. This relationship flips after mobility, with downward movers more likely to be high earners for their new occupation and upward movers more likely to be low earners for their new occupation. 
+
+All three classes of models lead to different predictions about what may happen after an exogenous job displacement shock. If the labor market is relatively efficient, individuals should quickly be able to return to their optimal match. If there are switching costs that slow down voluntary sorting, the exogenous shock may even induce efficient reallocations. However, if there is congestion and incomplete information in the labor market, job seekers may struggle to match with their optimal occupation, and instead match with a job for which they are less-well suited. In the case of horizontal sorting, this may result in the destruction of specific human capital and long-term earnings losses. On the other hand, in the case of vertical sorting, individuals will be able to use accumulated human capital and again climb the occupational job ladder. 
+
+Thus, the observation of occupational mobility after an exogenous job displacement shock is not enough to conclude inefficient occupational reallocations. Instead, it must be compared to mobility for similar non-displaced workers. \highlightPP{By measuring the frequency of upward and downward mobility, the prevalence of mobility within versus between firms, and the corresponding wage changes associated with different types of mobility, I will be able to distinguish between the theories of occupational mobility. }
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
