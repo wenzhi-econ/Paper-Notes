@@ -1,0 +1,343 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{FF5733} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Efficient Search on the Job and the Business Cycle, Journal of Political Economy, 2011} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{menzioEfficientSearchJob2011}
+
+\section{Introduction}
+
+This paper proposes a model of directed search on the job in which the workers' transitions between employment and unemployment and across different employers are driven by heterogeneity in the quality of different firm-worker matches. 
+
+
+\section{Planner's Problem} \label{sec_planners_problem}
+
+\subsection{Preferences and Technologies}
+
+
+The economy is populated by a continuum of infinitely-lived workres with measure one and a continuum of firms with positive measure. Each worker is endowed with an indivisible unit of labor and maximizes the expected sum of periodical consumption discounted at the factor $\b \in \bp{0, 1}$. Each firm operates a technology with constant returns to scale which turns one unit of labor into $y+z$ units of consumption. The first component of productivity, $y$, is commont to all firms, and its value lies in the set $Y = \bc{y_1, y_2, \ldots, y_{N\of{y}}}$, where $\undl{y} \equiv y_1 < \ldots < y_{N\of{y}} \equiv \ol{y}$ and $N\of{y} \geq 2$ is an integer. The second component of productivity, $z$, is specific to each firm-worker pair, and its value lies in the set $Z = \bc{z_1, z_2, \ldots, z_{N\of{z}}}$, where $\undl{z} \equiv z_1 < \ldots < z_{N\of{z}} \equiv \ol{z}$ and $N\of{z} \geq 1$ is an integer. Each firm maximizes the expected sum of periodical profits discounted at the factor $\b$. 
+
+Time is discrete and continues forever. At the beginning of each period, the state of the economy can be summarized by the triple $\psi = \bp{y, u, g}$. The first element of $\psi$ denotes aggregate productivity, $y \in Y$. The second element denotes the measure of workers who are unemployed, $u \in \bs{0,1}$. The third element is a function $g: Z \mapsto \bs{0,1}$, with \highlightB{$g\of{z}$ denoting the measure of workers who are employed in matches with the idiosyncratic productivity $z$}. Let $\Psi$ denote the set in which $\psi$ belongs. 
+
+Each period is divided into four stages: separation, search, matching, and production. At the separation stage, the planner chooses the probability $d \in \bs{\d, 1}$ with which a match between the firm and a worker is destroyed. The lower bound on $d$ denotes the probability that a match is destroyed for exogenous reasons, $\d \in \bp{0,1}$. 
+
+At the search stage, the planner sends workers and firms searching for new matches across different locations. Specifically, the planner chooses how many vacancies a firm should open in each different location and which location a worker should visit if he has the opportunity to search. The cost of maintaining a vacancy for one period is $k > 0$. The worker has the opportunity to search with a probability that depends on his employment status. If the worker was unemployed at the beginning of the period, he can search with proability $\l_u \in \bs{0,1}$. If the worker was employed at the beginning of the period and did not lose his job during the separation stage, he can search with probability $\l_e \in \bs{0,1}$. Finally, if the worker lost his job during the separation stage, he cannot search. As is standard in models of directed search, the planner will find it optimal to send workers in different employment states (i.e., unemployment and employment in a match of type $z$) to search in different locations but will have no incentive to send workers in the same employment state to different locations. Thus, there is no loss in generality in assuming that there are exactly $N\of{z} + 1$ locations. 
+
+At the meeting stage, the workers and the vacancies that are searching in the same location are brought into contact by a meeting technology with constant returns to scale that can be described in terms of the vacancy-to-worker ratio $\t$ (i.e., the tightness). Specifically, the probability that a worker meets a vacancy is $p\of{\t}$, where $p: \R_+ \mapsto \bs{0,1}$ is a twice-continuously differentiable, strictly increasing, strictly concave function that satisfies the boundary conditions $p\of{0} = 0$ and $p\of{\infty} = 1$. Similarly, the probability that a vacancy meets a worker is $q\of{\t}$, where $q: \R_+ \mapsto \bs{0,1}$ is a twice-continuously differentiable, strictly decreasing function such that $q\of{\t} = p\of{\t} / \t$, $q\of{0} = 1$, and $q\of{\infty} = 0$. 
+
+When a firm and a worker meet, nature draws the idiosyncratic productivity of their match, $z$, from the probability distribution $f\of{z}, f: Z \mapsto \bs{0,1}$. \highlightO{Nature also draws a signal about the idiosyncratic productivity of their match, $s$.} With probability $\a \in \bs{0,1}$, the signal is equal ot $z$; with probability $1- \a$, the signal is drawn from the distribution $f$ independently of $z$. After observing $s$ but not $z$, the planner chooses whether to create the match or not. If the planner chooses to create the match, the worker's previous match is destroyed (if the worker was employed). If the planner chooses not to create the match, the worker returns to this previous status (unemployment or employment in the previous match). 
+
+Notice that the information structure above encompasses a number of interesting special cases. If $\a = 0$, the planner has no information about the quality of a match when choosing whether to create it or not, in which case a match is a pure \highlightB{experience good}. If $\a = 1$, the planner has perfect information about the quality of a match before choosing whether to create it or not, in which case a match is a pure \highlightB{inspection good}. If $\a \in \bp{0,1}$, a match is partly an experience good and partly an inspection good. 
+
+At the production stage, an unemployed worker produces $b > 0$ units of output. A worker employed in a match with idiosyncratic productivity $z$ produces $y+z$ units of output, and $z$ is observed. At the end of this stage, nature draws next period's aggregate component of productivity, $\wh{y}$, from the probability distribution $\phi\of{\wh{y}\mid y}, \phi: Y \times Y \mapsto \bs{0,1}$. Throughout the paper, the caret indicates variables or functions in the next period. 
+
+\subsection{Formulation of the Planner's Problem}
+
+At the beginning of the period, the social planner observes the aggregate state of the economy $\psi = \bp{y, u, g}$. At the separation stage, the planner chooses the probability $d\of{z}$ of destroying a match of quality $z, d: Z \mapsto \bs{\d, 1}$. At the search stage, the planner chooses $\t_u$, the ratio of vacancies to workers at the location where unemployed workers look for matches, and $\t_e\of{z}$, the ratio of vacancies to workers at the location where workers employed in matches for quality $z$ look for new matches, $\t_u \in \R_+, \t_e: Z \mapsto \R_+$. At the matching stage, the planner chooses the probability $c_u\of{s}$ with which a meeting between an unemployed worker and a firm is turned into a match given the signal $s, c_u: Z \mapsto \bs{0,1}$. Also, the planner chooses the probability $c_e\of{s, z}$ with which a meeting between an employed worker and a firm is turned into a math given the signal $s, c_e: Z \times Z \mapsto \bs{0,1}$. Given the choices $\bp{d, \t_u, \t_e, c_u, c_e}$, aggregation consumption is given by 
+\begin{equation}
+    \label{1}
+    F\of{d, \t_u, \t_e, c_u, c_e \mid \psi} = -k \bp{\l_u \t_u u + \sum_z \bc{\bs{1-d\of{z}} \l_e \t_e\of{z} g\of{z}}} + b \wh{u} + \sum_z \bs{\bp{y+z}\wh{g}\of{z}},
+\end{equation}
+where $\bp{\wh{u}, \wh{g}}$ denotes the distribution of workers across employment states at the production stage and, hence, at the beginning of next period. 
+
+To capture $\wh{u}$ and $\wh{g}$, it is useful to derive the transition probabilities for an individual worker. First, consider a worker who enters the period unemployed. With probability $1 - \l_u p\of{\t_u}$, the worker does not meet any firm at the matching stage. In this case, the worker remains unemployed. With probability $\l_u p\of{\t_u}$, the worker meets a firm during the matching stage. In this case, the worker and the firm receive a signal $s$ about the quality of their match. With probability $1 - c_u\of{s}$, the match is not created and the worker remains unemployed. With probability $c_u\of{s} \bs{\a + \bp{1-\a} f\of{s}}$, the match is created and its idiosyncratic productivity is $z^{\prime} = s$. With probability $c_u\of{s} \bp{1-\a} f\of{z^{\prime}}$, the match is created and its idiosyncratic productivity is $z^{\prime} \neq s$. Overall, at the production stage, the worker is unemployed with probability $1 - \l_u p\of{\t_u} m_u$, where $m_u = \sum_s \bs{c_u\of{s} f\of{s}}$, and he is employed in match of type $z^{\prime}$ with probability $\l_u p\of{\t_u} \bs{\a c_u\of{z^{\prime}} + \bp{1-\a}m_u} f\of{z^{\prime}}$. Next, consider a worker who enters the period in a match of type $z$. It is easy to verify that, at the production stage, this worker is unemployed with probability $d\of{z}$; he is employed in the same match as at the beginning of the period with probability $\bs{1 - d\of{z}} \bs{1 - \l_e p\of{\t_e\of{z}} m_e\of{z}}$, where $m_e\of{z} = \sum_s \bs{c_e\of{s, z} f\of{s}}$; and he is employed in a new match of type $z^{\prime}$ with probability $\bs{1 - d\of{z}} \l_e p\of{\t_e\of{z}} \bs{\a c_e\of{z^{\prime}, z} + \bp{1-\a} m_e\of{z}}f\of{z^{\prime}}$. 
+
+After aggregating the transition probabilities of individual workers, we find that the measure of workers who are unemployed at the production stage is given by 
+\begin{equation}
+    \label{2}
+    \wh{u} = u \bs{1 - \l_u p\of{\t_u} m_u} + \sum_z \bs{d\of{z} g\of{z}}.
+\end{equation}
+Similarly, the measure of workers who are employed in matches of type $z^{\prime}$ is given by 
+\begin{equation}
+    \label{3}
+    \begin{aligned}
+        \wh{g}\of{z^{\prime}} = & u \l_u p\of{\t_u} \bs{\a c_u\of{z^{\prime}} + \bp{1-\a}m_u} f\of{z^{\prime}} \\
+        & + g\of{z^{\prime}}\bs{1-d\of{z^{\prime}}}\bs{1 - \l_e p\of{\t_e\of{z^{\prime}}} m_e\of{z^{\prime}}} \\
+        & + \sum_z g\of{z} \bc{\bs{1-d\of{z}} \bs{\l_e p\of{\t_e\of{z}}} \bs{\a c_e\of{z^{\prime}, z} + \bp{1-\a}m_e\of{z}} f\of{z^{\prime}}}.
+    \end{aligned}
+\end{equation}
+
+The planner maximizes the sum of present and future consumption discounted at the factor $\b$. Hence, the planner's value function. $W\of{\psi}$, solves the following Bellman equation:
+\begin{equation}
+    \label{4}
+    W\of{\psi} = \max_{d, \t_u, \t_e, c_u, c_e} F\of{d, \t_u, \t_e, c_u, c_e \mid \psi} + \b \E\bs{W\of{\wh{\psi}}} 
+\end{equation}
+subject to (\ref{2}) and (\ref{3}), 
+\begin{equation}
+    \notag 
+    \begin{aligned}
+        & d: Z \mapsto \bs{\d, 1}, \t_u \in \R_+, \t_e: Z \mapsto \R_+, \\
+        & c_u: Z \mapsto \bs{0,1}, c_e: Z \times Z \mapsto \bs{0,1}.
+    \end{aligned}
+\end{equation}
+Throughout this paper, the expectation operator is taken over the future state of the aggregate economy, $\wh{\psi}$, unless it is specified otherwise. 
+
+The planner's problem depends on the aggregate productivity, $y$, the measure of workers who are unemployed, $u$, and the measure of workers who are employed in the $N\of{z}$ different types of matches, $g$. If $N\of{z}$ is large -- as it is needed to properly calibrate and simulate the model -- solving the planner's problem might be difficult as it involves solving a functional equation in which the unknown function has many dimensions. Theorem \ref{thm1} below shows that this potential difficulty does not arise in our model because the planner's problem breaks down into $N\of{z}+1$ problems that depend only on the aggregate productivity $y$. 
+
+\begin{theorem}[Separability of the Planner's Problem] \label{thm1}
+    \par
+    \begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\roman*)]
+        \setlength{\parskip}{10pt} 
+        \item The planner's value function, $W\of{\psi}$, is the unique solution to (\ref{4}). 
+        
+        \item $W\of{\psi}$ is linear in $u$ and $g$. That is, $$W\of{\psi} = W_u\of{y} u + \sum_z W_e\of{z, y} g\of{z},$$
+        where $W_u\of{y}$ and $W_e\of{z,y}$ are called the component value functions. The component value function $W_u\of{y}$ is given by 
+        \scriptsize
+        \begin{equation}
+            \label{5}
+            W_u\of{y} = \max_{\bp{\t_u, c_u}} \bc{-k \l_u \t_u + \bs{1-\l_u p\of{\t_u} m_u}\bs{b + \b \E\bs{W_u\of{\wh{y}}}} + \l_u p\of{\t_u} \E_{z^{\prime}} \bs{\bp{\a c_u\of{z^{\prime}} + \bp{1-\a}m_u}} \bp{y + z^{\prime} + \b \E\bs{W_e\of{z^{\prime}, \wh{y}}}}}
+        \end{equation}
+        \normalsize
+        subject to 
+        $$\t_u \in \R_+, c_u: Z \mapsto \bs{0,1}.$$
+        The component value function $W_e\of{z, y}$ is given by 
+        \begin{equation}
+            \label{6}
+            \begin{aligned}
+                W_e(z, y)= & \max _{\left(d, \theta_e c_e\right.}\left\{d\left[b+\beta \mathbb{E} W_u(\wh{y})\right]-(1-d) k \lambda_e \theta_e\right. \\
+                & +(1-d)\left[1-\lambda_e p\left(\theta_e\right) m_e\right]\left[y+z+\beta \mathbb{E} \bs{W_e(z, \wh{y})}\right] \\
+                & +(1-d) \lambda_e p\left(\theta_e\right) \mathbb{E}_{z^{\prime}}\left[\alpha c_e\left(z^{\prime}\right)+(1-\alpha) m_e\right]\left[y+z^{\prime}\right. \\
+                & \left.\left.+\beta \mathbb{E} \bs{W_e\left(z^{\prime}, \wh{y}\right)}\right]\right\}
+            \end{aligned}
+        \end{equation}
+        subject to 
+        $$d \in \bs{\d, 1}, \t_e \in \R_+, c_e: Z \mapsto \bs{0,1}.$$
+
+        \item $W_e\of{z, y}$ is strictly increasing in $z$. 
+        
+        \item The policy correspondences $\bp{d^*, \t_u^*, \t_e^*, c_u^*, c_e^*}$ associated with (\ref{4}) depend on $\psi$ only through $y$ and not through $\bp{u, g}$. 
+    \end{enumerate}
+\end{theorem}
+
+Each of the $N\of{z} + 1$ planner's problems is associated with a worker in a different employment state (unemployment and employment in a match of different quality). In the problem associated with an unemployed worker, (\ref{5}), the planner chooses $\t_u$ and $c_u\of{s}$ to maximize the present value of the output generated by this worker, net of the cost of the vacancies assigned to him. Similarly, in the problem associated with a worker employed in a match of type $z$, (\ref{6}), the planner chooses $d\of{z}, \t_e\of{z}, c_e\of{s, z}$ to maximize the present value of the output generated by this worker, net of the cost of the vacancies assigned to him. \highlightP{Since each of these worker-specific problems depends only on the aggregate productivity, $y$, solving the planner's problem in our model is just as easy as solving the planner's problem in a representative agent model.}
+
+The planner's problem can be decomposed into worker-specific problems that depend only on the aggregate productivity, $y$, because the search process is directed rather than random. Under random search, the planner has to choose the same tightness for workers in different employment states because all workers search in the same location. For this reason, the planner's problem cannot be decomposed into worker-specific problems, and its solution will depend not only on the aggregate productivity, $y$, but also on the distribution of workers across employment states, $\bp{u, g}$. In contrast, under directed search, the planner can choose a different workers search in a different locations. This property, together with the linearity of the production function, is sufficient to guarantee that the planner's problem can be decomposed into $N\of{z} + 1$ worker-specific problems that depend on the aggregate productivity, $y$, but not on the distribution of workers, $\bp{u,g}$. 
+
+\subsection{Solution to the Planner's Problem}
+
+The efficient choice for the probability of turning a meeting between a firm and an unemployed worker into a match is $c_u^*\of{s, y} = 1$ if 
+\begin{equation}
+    \label{7}
+    \begin{aligned}
+        b+\beta \mathbb{E} W_u(\wh{y}) \leq & \alpha\left[y+s+\beta \mathbb{E} W_e(s, \wh{y})\right] \\
+        & +(1-\alpha) \mathbb{E}_{z^{\prime}}\left[y+z^{\prime}+\beta \mathbb{E} W_e\left(z^{\prime}, \wh{y}\right)\right]
+    \end{aligned}
+\end{equation}
+and $c_u^*\of{s,y} = 0$ otherwise, where $s$ is the signal about the quality of the match. Similarly, the efficient choice for the probability of turning a meeting between a firm and an employed worker into a match is $c_e^*\of{s, z, y} = 1$ if 
+\begin{equation}
+    \label{8}
+    \begin{aligned}
+        y+z+\beta \mathbb{E} W_e(z, \wh{y}) \leq & \alpha\left[y+s+\beta \mathbb{E} W_e(s, \wh{y})\right] \\
+        & +(1-\alpha) \mathbb{E}_{z^{\prime}}\left[y+z^{\prime}+\beta \mathbb{E} W_e\left(z^{\prime}, \wh{y}\right)\right]
+    \end{aligned}
+\end{equation}
+and $c^*_e\of{s, z, y} = 0$ otherwise, where $z$ is the quality of the worker's current match and $s$ is the signal about the quality of the new match. These conditions are intuitive. The left-hand side in (\ref{7}) and (\ref{8}) is the value of keeping the worker in his current employment position (unemployment and employment in a match of type $z$). The right-hand side of (\ref{7}) and (\ref{8}) is the value of moving the worker to the new match. This is equal to the value of a worker employed in a match with idiosyncratic productivity $z^{\prime}$, where $z^{\prime}$ is equal to $s$ with probability $\a$ and to a value drawn randomly from the distribution $f$ with probability $1-\a$. The planner finds it optimal to create the match if and only if the lefthand side is smaller than the right-hand side. Notice that the left-hand side of (\ref{7}) is independent of $s$, whereas the right-hand side is strictly increasing in $s$. Hence, the creation probability $c_u^*\of{s, y}$ is an increasing function of $s$ and can be represented by a reservation signal $r_u^*\of{y}$ such that $c_u^*\of{s, y} = 0$ if $s < r_u^*\of{y}$ and $c_u^*\of{s, y} = 1$ if $s \geq r_u^*\of{y}$. For the same reason, the creation probability $c_e^*\of{s, z, y}$ can be represented by a reservation signal $r_e^*\of{z, y}$ such that $c_e^*\of{s, z, y} = 0$ if $s < r_e^*\of{z, y}$ and $c_e^*\of{s, z, y} = 1$ if $s \geq r_e^*\of{z, y}$. Moreover, since the right-hand side of (\ref{8}) is strictly increasing in $z$, $r_e^*\of{z, y}$ is increasing in $z$. 
+
+The efficient choice for the vacancy-to-worker ratio at the location visited by unemployed workers is $\t_u^*\of{y}$ such that 
+\begin{equation}
+    \label{9}
+    \begin{aligned}
+        k \geq & p^{\prime}\left(\theta_u^*(y)\right) \sum_{s \geq v_u^*(y)}\left(\alpha\left\{y+s-b+\beta \mathbb{E}\left[W_e(s, \wh{y})-W_u(\wh{y})\right]\right\}\right. \\
+        & \left.+(1-\alpha) \mathbb{E}_{z^{\prime}}\left\{y+z^{\prime}-b+\beta \mathbb{E}\left[W_e\left(z^{\prime}, \wh{y}\right)-W_u(\wh{y})\right]\right\}\right) f(s)
+    \end{aligned}
+\end{equation}
+and $\t_u^*\of{y} \geq 0$, with complementary slackness. Similarly, the efficient choice for the vacancy-to-worker ratio in the location visited by workers employed in matches of quality $z$ is $\t_e^*\of{z, y}$ such that 
+\begin{equation}
+    \label{10}
+    \begin{aligned}
+        k \geq & p^{\prime}\left(\theta_e^*(z, y)\right) \sum_{s \geq v_e^*(z, y)}\left(\alpha\left\{s-z+\beta \mathbb{E}\left[W_e(s, \wh{y})-W_e(z, \wh{y})\right]\right\}\right. \\
+        & \left.+(1-\alpha) \mathbb{E}_{z^{\prime}}\left\{z^{\prime}-z+\beta \mathbb{E}\left[W_e\left(z^{\prime}, \wh{y}\right)-W_e(z, \wh{y})\right]\right\}\right) f(s)
+    \end{aligned}
+\end{equation}
+and $\t_e^*\of{z, y} \geq 0$, with complementary slackness. We discuss only (\ref{10}) since the two conditions above are similar. The left-hand side is the marginal cost of increasing the vacancy-to-worker ratio at the location visited by workers employed in matches of quality $z$. The right-hand side is the marginal benefit of increasing this vacancy-to-worker ratio, which is given by the product of two terms. The first term is the marginal increase in the probability with which a worker employed in a match of quality $z$ meets a firm. The second term is the value of a meeting between a worker employed in a match of quality $z$ and a firm. If $\t_e^*\of{z,y}$ is positive, the marginal cost and the marginal benefit of increasing the vacancy-to-worker ratio must be equal. Otherwise, the marginal cost must be greater than the marginal benefit. Notice that the left-hand side does not depend on $z$, whereas the right-hand side strictly decreases with $z$. Hence, as long as $\t_e^*\of{z, y} > 0$, the vacancy-to-worker ratio $\t_e^*\of{z,y}$ is a strictly decreasing function of $z$.
+
+Finally, the efficient choice for the probability of destroying a match is $d^*\of{z, y} = 1$ if 
+\begin{equation}
+    \label{11}
+    \begin{aligned}
+        b+\beta \mathbb{E} W_u(\wh{y})> & -k \lambda_e \theta_e^*(z, y) \\
+        & +\left[1-\lambda_e p\left(\theta_e^*(z, y)\right) m_e^*(z, y)\right]\left[y+z+\beta \mathbb{E} W_e(z, \wh{y})\right] \\
+        & +\lambda_e p\left(\theta_e^*(z, y)\right) \mathbb{E}_{z^{\prime}}\left\{\left[\alpha c_e^*\left(z^{\prime}, z, y\right)\right.\right. \\
+        & \left.\left.+(1-\alpha) m_e^*(z, y)\right]\left[y+z^{\prime}+\beta \mathbb{E} W_e\left(z^{\prime}, \wh{y}\right)\right]\right\},
+    \end{aligned}
+\end{equation}
+and $d^*\of{z, y} = \d$ otherwise, where $z$ is the idiosyncratic productivity of the match. The left-hand side of (\ref{11}) is the value of a worker who is unemployed and does not have the opportunity to search for a new match in the current period. This is the value of destroying the match. The right-hand side is the value of a worker who is employed in a match of type $z$ and has the opportunity to search for a new match with probability $\l_e$. This is the value of keeping the match alive. When the lefthand side is greater than the right-hand side, the planner destroys the match with probability one. Otherwise, nature destroys the match with probability $\d$. Notice that the left-hand side does not depend on $z$, whereas the right-hand side is strictly increasing in $z$. Hence, the destruction probability $d^*\of{z, y}$ is a decreasing function of $z$ and can be represented by a reservation productivity $r_d^*\of{y}$ such that $d^*\of{z, y} = 1$ if $z < r_d^*\of{y}$ and $d^*\of{z,y} = \d$ if $z \geq r_d^*\of{y}$. 
+
+We summarize the properties of the efficient choices in the proposition below.
+
+\begin{proposition}[Planner's Policy Functions] \label{prop1}
+    \begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\roman*)]
+        \setlength{\parskip}{10pt} 
+        \item The policy correspondences $\bp{d^*, \t_u^*, \t_e^*, c_u^*, c_e^*}$ are single valued. 
+        \item There is $r_d^*\of{y}$ such that $d^*\of{z, y} = 1$ if $z < r_d^*\of{y}$ and $d^*\of{z, y} = \d$ else. 
+        \item There is $r_u^*\of{y}$ such that $c_u^*\of{s, y} = 0$ if $s < r_u^*\of{y}$ and $c_u^*\of{s, y} = 1$ else. Similarly, there is $r_e^*\of{z, y}$ such that $c_e^*\of{s, z, y} = 0$ if $s < r_e^*\of{z, y}$ and $c_e^*\of{s, z, y} = 1$ else. Moreover, $r_e^*\of{z, y}$ is increasing in $z$. 
+        \item $\t_e^*\of{z,y}$ is decreasing in $z$. 
+    \end{enumerate}
+\end{proposition}
+
+With respect to a standard search model, our model identifies a number of additional channels through which an aggregate productivity shock may affect the transitions of workers across employment states. First, by affecting not only $\t_u^*$ and $\t_e^*$ but also $r_u^*$ and $r_e^*$, an aggregate productivity shock may affect not only the probability that a worker meets a firm but also the probability that a meeting between a firm and a worker turns into a match. Clearly, both channels may contribute to the response of the UE and EE rates to an aggregate productivity shock. Second, by affecting $r_d^*$, an aggregate productivity shock may affect the probability that the match between a firm and a worker is destroyed and, hence, it may affect the EU rate. As we shall see later, \highlightP{the quantitative importance of these additional channels depends on the informativeness of the signals and on the shape of the distribution of match-specific productivity}.
+
+\section{Decentralization}
+
+In this section, we describe a market economy that decentralizes the efficient allocation. We first describe the structure of the labor market and the nature of the employment contracts. We then derive the conditions on the individual agent's value and policy functions that need to be satisfied in the market equilibrium. Finally, we establish that there exists a unique equilibrium for the market economy and that this equilibrium is efficient, in the sense that the agents' value and policy functions depend on the aggregate state of the economy, $\psi$, only through the aggregate productivity, $y$, and not through the entire distribution of workers across employment states, $\bp{u, g}$. The equilibrium is block recursive because, with directed search, workers in different employment states choose to search in different submarkets.
+
+\subsection{Market Economy}
+
+For the planner's problem in Section \ref{sec_planners_problem}, we needed to describe only the physical environment of the economy. For the analysis of equilibrium here, we also have to describe the structure of the labor market and the nature of the employment contracts. We assume that the labor market is organized in a continuum of submarkets indexed by $\bp{x, r}$, $\bp{x, r} \in \R \times Z$, where $x$ is the value offered by a firm to a worker and $r$ a selection criterion based on the signal $s$. Specifically, when a firm meets a worker in submarket $\bp{x,r}$, it hires the worker if and only if the signal $s$ about the quality of their match is greater than or equal to $r$. If the firm hires the worker, it offers him an employment contract worth $x$ in lifetime utility. The vacancy-to-worker ratio of submarket $\bp{x, r}$ is denoted as $\t\of{x, r, \psi}$. In equilibrium, $\t\of{x, r, \psi}$ will be consistent with the firms' and workers' search decisions. 
+
+At the separation stage, an employed worker moves into unemployment with probability $d \in \bs{\d, 1}$. At the search stage, each firm chooses how many vacancies to create and in which submarkets to locate them. On the other side of the market, each worker who has the opportunity to search chooses which submarket to visit. At the matching stage, each worker searching in submarket $\bp{x,r}$ meets a vacancy with probability $p\of{\t\of{x, r, \psi}}$. Similarly, each vacancy locate in submarket $\bp{x,r}$ meets a worker with probability $q\of{\t\of{x, r, \psi}}$. When a worker and a vacancy meet in submarket $\bp{x,r}$, the hiring process follows the rule specified for that submarket; that is, the worker is hired if and only if the signal is higher than $r$ and, conditional on being hired, he receives the lifetime utility $x$. At the production stage, an unemployed worker produces $b$ units of output, and a worker employed in a match of type $z$ produces $y+z$ units of output. 
+
+\highlightR{We assume that the contracts offered by the firms to workers are bilaterally efficient in the sense that they maximize the joint value of the match, that is, the sum of the worker's lifetime utility and the firm's lifetime profits.} We make this assumption because there are variety of specifications of the contract space under which the contracts that maximize the profits of the firm are, in fact, bilaterally efficient. 
+
+\subsection{The Problem of the Worker and the Firm}
+
+First, consider an unemployed worker at the beginning of the production stage, and let $V_u\of{\psi}$ denote his lifetime utility. In the current period, the worker produces and consumes $b$ units of output. In the next period, the worker matches with a vacancy with probability $\l_u p\of{\t\of{x, r, \psi}} m\of{r}$, where $\bp{x, r}$ is the submarket where the worker searches and $m\of{r} = \sum_{s \geq r} f\of{s}$ is the probability that the signal about the quality of the match is above the selection cutoff $r$. If the worker matches with a vacancy, his continuation utility is $x$. If the worker does not match with a vacancy, his continuation utility is $V_u\of{\wh{\psi}}$. Thus, 
+\begin{equation}
+    \label{12}
+    V_u(\psi)=b+\beta \mathbb{E} \max _{(x, r)}\left\{V_u(\wh{\psi})+\lambda_u D\left(x, r, V_u(\wh{\psi}), \wh{\psi}\right)\right\},
+\end{equation}
+where $D$ is defined as 
+\begin{equation}
+    \label{13}
+    D\of{x, r, V, \psi} = p\of{\t\of{x, r, \psi}} m\of{r} \bp{x - V}. 
+\end{equation}
+We denote as $\bp{x_u\of{\wh{\psi}}, r_u\of{\wh{\psi}}}$ the policy functions for the optimal choices in (\ref{12}). 
+
+Second, consider a worker and a firm who are matched at the beginning of the production stage. Let $V_e\of{z, \psi}$ denote the sum of the worker's lifetime utility and the firm's lifetime profits. Int he current period, the sum of the worker's utility and the firm's profit is equal to the output of the match, $y+z$. In the next period, the worker and the firm separate at the matching stage with probability $d$, in which case the worker's continuation utility $V_u\of{\wh{\psi}}$ and the firm's continuation profit is zero. The worker and the firm separate at the next matching stage with probability $\bp{1-d}\bs{\l_e p\of{\t\of{x, r, \psi}}m\of{r}}$, where $\bp{x,r}$ is the submarket where the worker searches for a new match. In this case, the continuation utility of the worker is $x$ and the firm's continuation profit is zero. Finally, the worker and the firm remain together until the next production stage with probability $\bp{1-d} \bs{1-\l_e p\of{\t\of{x, r, \psi}} m\of{r}}$, in which case the sum of the worker's continuation utility and the firm's continuation profit is $V_e\of{z, \wh{\psi}}$. Thus, 
+\begin{equation}
+    \label{14}
+    V_e\of{z, \psi} = y + z + \b \E {\max_{d, x, r}} \bc{d V_u\of{\wh{\psi}} + \bp{1 - d} \bs{V_e\of{z, \wh{\psi}} + \l_e D\of{x, r, V_e\of{z, \wh{\psi}}, \wh{\psi}}}},
+\end{equation}
+where $D$ is the function defined in (\ref{13}). We denote as $d\of{z, \wh{\psi}}$ and $\bp{x_e\of{z, \wh{\psi}}, r_e\of{z, \wh{\psi}}}$ the policy functions for the optimal choices in (\ref{14}).
+
+At the search stage, a firm chooses how many vacancies to create and where the locate them. The firm's cost of creating a vacancy in submarket $\bp{x,r}$ is 
+\begin{equation}
+    \label{15}
+    q\of{\t\of{x, r, \psi}} \sum_{s \geq r} \bc{\bs{\a V_e\of{s, \psi} + \bp{1-\a} \E_z V_e\of{z, \psi} - x} f\of{s}},
+\end{equation}
+where $q\of{\t\of{x, r, \psi}}$ is the probability of meeting a worker, $V_e\of{s, \psi}$ is the joint value of the match if the signal is correct, $\E_zV_e\of{z, \psi}$ is the joint value of the match if the signal is not correct, and $x$ is the part of the joint value of the match that the firm delivers to the worker. When the cost is strictly greater than the benefit, the firm does not create any vacancy in submarket $\bp{x,r}$. When the cost of is strictly smaller than the benefit, the firm creates infinitely many vacancies in submarket $\bp{x, r}$. And when the cost and the benefit are equal, the firm's profit is independent of the number of vacancies it creates in submarket $(x, r)$.
+
+In any submarket visited by a positive number of workers, the tightness $\t\of{x, r, \psi}$ is consistent with the firm's incentives to create vacancies if and only if 
+\begin{equation}
+    \label{16}
+    k \geq q(\theta(x, r, \psi)) \sum_{s \geq r}\left\{\left[\alpha V_e(s, \psi)+(1-\alpha) \mathbb{E}_z V_e(z, \psi)-x\right] f(s)\right\}
+\end{equation}
+and $\t\of{x, r, \psi} \geq 0$ with complementary slackness. In any submarket that workers do not visit, the tightness $\t\of{x, r, \psi}$ is consistent with the firm's incentives to create vacancies if and only if $k$ is greater than or equal to (\ref{15}). However, following the literature on directed search with heterogeneous workers, we restrict attention to equilibria in which $\t\of{x, r, \psi}$ satisfies the above complementary slackness condition in every submarket. 
+
+\subsection{Equilibrium. Block Recursivity, and Efficiency}
+
+\begin{definition}
+    A \highlightB{block-recursive equilibrium (BRE)} consists of a market tightness function $\t: \R \times Z \times Y \mapsto \R_+$, a value function for the unemployed worker $V_u: Y \mapsto \R_+$, a policy function for the unemployed worker $\bp{x_u, r_u}: Y \mapsto \R \times Z$, a joint value function for the firm-worker match $V_e: Z \times Y \mapsto \R$, and policy functions for the firm-worker match $d: Z \times Y \mapsto \bs{\d, 1}$ and $\bp{x_e, r_e}: Z \times Y \mapsto \R \times Z$. These functions satisfy the following conditions:
+    \begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\roman*)]
+        \setlength{\parskip}{10pt} 
+        \item $\t\of{x, r, y}$ satisfies (\ref{16}) for all $\bp{x, r, \psi} \in \R \times Z \times \Psi$;
+        \item $V_u\of{y}$ satisfies (\ref{12}) for all $\psi \in \Psi$, and $\bp{x_u\of{y}, r_u\of{y}}$ are the associated policy functions; 
+        \item $V_e\of{z, y}$ satisfies (\ref{14}) for all $\bp{z, y} \in Z \times \Psi$, and $d\of{z, y}$ and $\bp{x_e\of{z,y}, r_e\of{z,y}}$ are the associated policy functions.
+    \end{enumerate}
+\end{definition}
+
+Condition (i) guarantees that the market tightness function $\t$ is consistent with the firm's incentives to create vacancies. Condition (ii) guarantees that the search strategy of an unemployed worker maximizes his lifetime utility, given the market tightness function $\t$. Condition (iii) guarantees that the employment contract maximizes the sum of the worker's lifetime utility and the firm's lifetime profits, given the market tightness function $\t$. 
+
+Taken together, conditions (i)-(iii) ensure that in a BRE, just as in a recursive equilibrium, the strategies of each agent are optimal given the strategies of the other agents. \highlightP{However, contrary to a recursive equilibrium, in a BRE, the agent's value and policy functions depend on the aggregate state of the economy, $\psi$, only through the aggregate productivity, $y$, and not through the distribution of workers across different employment states, $(u, g)$.} But does a BRE exist? And why should we focus on a BRE rather than on a recursive equilibrium?
+
+The following theorem answers these questions. Specifically, the theorem establishes that a BRE exists, that a BRE is unique, and that it decentralizes the solution to the social planner/s problem. Moreover, the theorem establishes that there is no loss in generality in focusing on the BRE because all equilibria are block recursive.
+
+\begin{theorem}[Block Recursivity, Uniqueness, and Efficiency of Equilibrium] \label{thm2}
+    \begin{enumerate}[topsep=0pt, leftmargin=20pt, itemsep=0pt, label=(\roman*)]
+        \setlength{\parskip}{10pt} 
+        \item All equilibria are block recursive.
+        \item There exists a unique BRE.
+        \item The BRE is socially efficient in the sense that
+        \begin{enumerate}[topsep=0pt, leftmargin=25pt, itemsep=0pt, label=(\alph*)]
+            \setlength{\parskip}{10pt} 
+            \item $\t\of{x_u\of{y}, r_u\of{y}, y} = \t_u^*\of{y}$ and $r_u\of{y} = r_u^*\of{y}$;
+            \item $d\of{z, y} = d^*\of{z, y}$; and 
+            \item $\t\of{x_e\of{z, y}, r_e\of{z, y}, y} = \t_e^*\of{z, y}$ and $r_e\of{z, y} = r_e^*\of{z, y}$.
+        \end{enumerate}
+    \end{enumerate}
+\end{theorem}
+
+\highlightP{The equilibrium is block recursive because searching workers are endogenously separated in different markets, and as in the social planner's problem, such separation is possible only when search is directed.} To explain why directed search induces workers to separate endogenously, note that workers choose in which submarket to search in order to maximize the product between the probability of finding a new match and the value of moving from their current employment position to the new match. For a worker in a low-value employment position (unemployment or employment in a low-quality match), it is optimal to search in a submarket where the probability of finding a new match is relatively high and the value of entering the new match is relatively low. For a worker in a high-value employment position (i.e., employment in a highquality match), it is optimal to search in a submarket where the probability of finding a new match is relatively low and the value of entering the new match is relatively high. Overall, workers in different employment positions choose to search in different submarkets. As a result of the self-selection of workers, a firm that opens a vacancy in submarket $\bp{x, r}$ knows that it will meet only one type of worker. For this reason, the expected value to the firm from meeting a worker in submarket $\bp{x,r}$ does not depend on the entire distribution of workers across employment states and, because of the free-entry condition (\ref{16}), the probability that a firm meets a worker in submarket $\bp{x,r}$ has the same property. Since the meeting probability across different submarkets is independent from the distribution of workers across employment states, it is easy to see from (\ref{12}) and (\ref{14}) that the value of unemployment and the joint value of a match will also be independent from the distribution.
+
+If we replaced the assumption of directed search with random search, the equilibrium could not be block recursive. Under random search, workers in high- and low-value employment positions all have to search in the same market. When this is the case, the firm's expected value from meeting a worker depends on how workers are distributed across different employment positions, as this distribution determines the probability that the employment contract offered by the firm will be accepted by a randomly selected worker. In turn, the free-entry condition implies that the probability that a firm meets a worker must also depend on the distribution of workers. Since the meeting probability between firms and workers depends on the distribution, so do all of the agents' value and policy functions.
+
+It is important to clarify that the assumption of bilaterally efficient contracts is not necessary for establishing the existence of a block-recursive equilibrium. 
+
+However, we use the assumption of bilaterally efficient contracts in order to establish the equivalence between the block-recursive equilibrium and the social plan and to rule out equilibria that are not block recursive. When contracts are bilaterally efficient, the joint value of a match to the firm and the worker satisfies the equilibrium condition (\ref{14}). After solving the free-entry condition (\ref{16}) for $x$ and substituting the solution into (\ref{14}), we get
+\begin{equation}
+    \label{17}
+    \begin{aligned}
+        V_e(z, \psi)= & y+z+\beta \mathbb{E} \max _{(d, \theta, r)}\left\{d V_u(\wh{\psi})-(1-d) \lambda_e k \theta+(1-d) \lambda_e V_e(z, \wh{\psi})\right. \\
+        & +(1-d) \lambda_e p(\theta) \sum_{s \geq r}\left[\alpha V_e(s, \wh{\psi})+(1-\alpha) E_z V_e\left(z^{\prime}, \wh{\psi}\right)\right. \\
+        & \left.\left.-V_e(z, \wh{\psi})\right] f(s)\right\} .
+    \end{aligned}
+\end{equation}
+One can easily verify that (\ref{17}) is satisfied not only by the joint value of a match to the firm and the worker, $V_e\of{z, \psi}$, but also by the value of an employed worker to the planner, $y+z+\b\E\bs{W_e\of{z, \wh{y}}}$. Moreover, one can verify that the functional equation (\ref{17}) is a contraction mapping and, hence, it admits a unique solution. Therefore, the joint value of a match to the firm and the worker must be equal to the value of an employed worker to the planner. Similarly, one can establish the equivalence between the value of unemployment to a worker, $V_u\of{\psi}$, and the value of an unemployed worker to the planner, $b + \b \E\bs{W_u\of{\wh{y}}}$. The equivalence between the value functions of individual agents and the component value functions of the planner is sufficient for establishing that any equilibrium is efficient and block recursive.
+
+
+\section{Calibration}
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
