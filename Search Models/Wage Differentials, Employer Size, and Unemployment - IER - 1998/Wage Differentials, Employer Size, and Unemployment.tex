@@ -1,0 +1,237 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+% \usepackage{fourier} % Favourite Font
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{CC5500} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Wage Differentials, Employer Size, and Unemployment, International Economic Review, 1998} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{burdettWageDifferentialsEmployer1998}
+
+\section{Introduction}
+
+Empirical research has documented that inter-industry and cross-employer wage differentials exist, are stable, and cannot be explained by observable differences in worker or job characteristics that might require compensation. Why should workers of apparently equal ability be paid differently on similar jobs? Many have attempted to provide an explanation. 
+
+Here we show that persistent wage differentials are consistent with strategic wage formation in an environment characterized by market friction with and without observable heterogeneity across workers and jobs. 
+
+In the environment studies, workers randomly search employers for a job that pays a higher wage while employed and an acceptable wage when unemployed, whereas each employer posts a wage conditional on the search behavior of workers and the wages offered by other firms. Given the wages offered by all others and the distribution of worker reservation wage rates, the labor force available to a specific employer evolves in response to the employer's wage. The higher the wage the larger the steady-state labor force, because higher wage firms attract more workers from and lose fewer workers to other employers. The resulting labor supply relation determines the profit of each employer conditional on the wages offered by other employers and the reservation wages demanded by workers. We show that the unique noncooperative steady-state equilibrium to the game can be characterized by a nondegenerate distribution of wage offers even when all workers and jobs are respectively identical if a relatively natural condition holds -- \highlightP{the arrival rate of job offers experienced by all workers is strictly positive but finite}. As the arrival rate of job offers tends to infinity, the competitive equilibrium results in hte limit. However, if employed workers do not receive job offers but unemployed workers face a strictly positive but finite arrival rate of offers, all employers offer the monopsony wage, that is, the monopsony equilibrium obtains. 
+
+Wage dispersion exists in equilibrium even when workers are equally productive in all jobs. Three further strong predictions also follow from this simplest version of the model. First, more experienced workers and those with more tenure are more likely to be found in higher paying jobs. Second, there is a positive association between the labor force size and the wage paid. Finally, there is also a negative relationship between wage offers and quit rates across employers. 
+
+
+\section{Pure Wage Dispersion}
+
+Suppose a large fixed number of both employers and workers participate in a labor market, formally a continuum of each. The measure of workers is indicated by $m$, whereas the measure of employer is normalized to equal the number $1$. In the initial model considered, all workers and all firms are respectively identical. 
+
+The decision problem faced by a worker is considered first. At a moment in time, each worker is either unemployed (state 0) or employed (state 1). At random time intervals, however, a worker receives information about a new or alternative job opening. Allowing the arrival rate to depend on a worker's current state, let $\l_i, i \in \bc{0, 1}$, representing the parameter of a Possion arrival process, denote the arrival rate of offers while a worker is currently occupying state $i$. As workers are assumed to randomly search among employers, an offer is assumed to be the realization of a random draw from $F$, the distribution of wage offers across employers. Workers must respond to offers as soon as they arrive; there is no recall. 
+
+As jobs are identical apart from the wage associated with them, employed workers move from lower to higher paying jobs as the opportunity arises. Workers also move from employment to unemployment as well as from job to job. In particular, job-worker matches are destroyed at an exogenous positive rate $\d$. Any unemployed worker receives utility flow $b$ per instant. All agents discount future income at rate $r$. 
+
+Given the framework briefly outlined above, the expected discounted lifetime income when a worker is unemployed, $V_0$, can be expressed as the solution to the asset pricing problem 
+\begin{equation}
+    \label{1}
+    r V_0 = b + \l_0 \bs{\int \max \bc{V_0, V_1\of{\wt{x}}} d F\of{\wt{x}} - V_0}.
+\end{equation}
+In other words, the opportunity cost of searching while unemployed, the interest on its asset value, is equal to income while unemployed plus the expected capital gain attributable to searching for an acceptable job where acceptance occurs only if the value of employment, $V_1\of{w}$, exceeds that of continued search. Similarly, the expected lifetime income of a worker currently employed at wage rate $w$ solves 
+\begin{equation}
+    \label{2}
+    r V_1\of{w} = w + \l_1 \bs{ \int \bs{\max\bc{V_1\of{w} - V_1\of{\wt{w}}} - V_1\of{w}} d F\of{\wt{w}}} + \d \bs{V_0 - V_1\of{w}}.
+\end{equation}
+
+As $V_1\of{w}$ is increasing in $w$ whereas $V_0$ is independent of it, a \highlightB{reservation wage}, $R$, exists such that 
+\begin{equation}
+    V_1\of{w} \gtrless V_0, \quad \text{as  } w \gtrless R,
+\end{equation}
+where $V_1\of{R} = V_0$. The above, plus equations (\ref{1}) and (\ref{2}), and an integration by parts imply 
+\begin{equation}
+    \label{4}
+    \begin{aligned}
+        R - b & = \bp{\l_0 - \l_1} \int_{R}^{\infty} \bs{V_1\of{x} - V_0} dF\of{x} \\
+        & = \bp{\l_0 - \l_1} \int_{R}^{\infty} V_1^\prime\of{x}\bs{1 - F\of{x}} dx \\
+        & = \bp{\l_0 - \l_1} \int_{R}^{\infty} \frac{1 - F\of{x}}{r + \d + \l_1 \bp{1 - F\of{x}}} dx. 
+    \end{aligned}
+\end{equation}
+Keeping the analysis as simple as possible, we consider the special case where $r$ is small relative to the offer arrival rate when unemployed. In particular, letting, $$\frac{r}{\l_0} \rightarrow 0$$ implies that (\ref{4}) can be written as 
+\begin{equation}
+    \label{5}
+    R - b = \bp{k_0 - k_1} \int_{R}^{\infty} \frac{1 - F\of{x}}{1 + k_1\bs{1 - F\of{x}}} d x
+\end{equation}
+where 
+\begin{equation}
+    \label{6}
+    k_0 = \frac{\l_0}{\d}, \quad k_1 = \frac{\l_1}{\d}
+\end{equation}
+represents the ratios of state-dependent arrival rates to the job separation rate. 
+
+Given the reservation wage, the flows of workers into and out of unemployment can be easily specified. Let $u$ denote the steady-state number of workers unemployed. In the steady state, the flow of workers into employment, $\l_0 \bs{1 - F\of{R}}u$ equals the flow from employment to unemployment $\d \bp{m-u}$, and therefore 
+\begin{equation}
+    \label{7}
+    u = \frac{m}{1 + k_0 \bs{1 - F\of{R}}}.
+\end{equation}
+
+Given an initial allocation of workers to firms, the number of employed workers receiving a wage no greater than $w$ at time $t$, $G\of{w, t} \bp{m-u\of{t}}$, can be calculated, where $G\of{w, t}$ is the proportion of employed workers at $t$ receiving a wage no greater than $w$, and $u\of{t}$ is the measure of unemployed at $t$. Its time derivative can be written as 
+\begin{equation}
+    \label{8}
+    \fdfrac{G\of{w, t} \bp{m-u\of{t}}}{t} = \l_0 \max\bc{F\of{w}-F\of{R}, 0} u\of{t} - \bs{\d + \l_1\bs{1 - F\of{w}}} G\of{w, t}\bp{m - u\of{t}}.
+\end{equation}
+\highlightP{The first term on the right-hand-side of (\ref{8}) describes the flow at time $t$ of unemployed workers into firms offering a wage no greater than $w$, whereas the second term represents the flow out into unemployment and into higher paying jobs.} The unique steady-state distribution of wages earned by employed workers can be written as 
+\begin{equation}
+    \label{9}
+    G\of{w} = \frac{\bs{F\of{w} - F\of{R}} / \bs{1 - F\of{R}}}{1 + k_1\bs{1 - F\of{w}}}
+\end{equation}
+by virtue of (\ref{7}) and (\ref{8}) for all $w \geq R$.
+
+In what follows, attention is focused on steady-state behavior. The steady-state number of workers earning a wage in the interval $\bs{w - \ve, w}$ is represented by $\bs{G\of{w} - G\of{w-\ve}}\bp{m-u}$, while $F\of{w} - F\of{w - \ve}$ is the measure of firms offering a wage in the same interval. Thus, the measure of workers per firm earning a wage $w$ can be expressed as 
+\begin{equation}
+    \notag 
+    \ell\of{w \mid R, F} = \lim_{\cvg{\ve}{0}} \frac{G\of{w} - G\of{w-\ve}}{F\of{w} - F\of{w - \ve}}\bp{m-u}.
+\end{equation}
+Therefore, 
+\begin{equation}
+    \label{10} 
+    \ell\of{w \mid R, F} = \frac{m k_0\left[1+k_1(1-F(R))\right] /\left[1+k_0(1-F(R))\right]}{\left[1+k_1(1-F(w))\right]\left[1+k_1\left(1-F\left(w^{-}\right)\right)\right]}
+\end{equation}
+if $w \geq R$ and $\ell\of{w \mid R, F} = 0$, if $w < R$, where 
+\begin{equation}
+    \notag 
+    F\of{w} = F\of{w^{-}} + v\of{w},
+\end{equation}
+given $v\of{w}$ is the fraction, or mass, of firms offering wage $w$. Thus, (\ref{10}) specifies the steady-state number of workers available to a firm offering any particular wage, conditional on the wages offered by other firms, represented by the distribution function $F$, and the workers reservation wage $R$. From (\ref{10}) it follows immediately that $\ell{\cdot \mid R, F}$ (for $w \geq R$) is (i) increasing in $w$; (ii) continuous except where $F$ has a mass point; and (iii) strictly increasing on the support of $F$ adn a constant on any connected interval off the support of $F$. 
+
+Firm behavior is now considered. Let $p$ denote the flow of revenue generated per employed worker. Hence, an employer's steady-state profit given the wage offer $w$ can be written as 
+$$\bp{p - w} \ell\of{w \mid R, F}.$$
+Conditional on $R$ and $F$, each employer is assumed to post a wage that maximizes its steady-state profit flow, that is, an optimal wage offer solves the following problem:
+\begin{equation}
+    \label{11}
+    \pi = \max_w \bp{p - w} \ell\of{w \mid R, F}.
+\end{equation}
+
+\highlightB{An equilibrium solution to the search and wage posting game} outlined above can be described by a triple $\bp{R, F, \pi}$, such that $R$, the common reservation wage of unemployed workers, satisfies (\ref{5}), $\pi$ satisfies (\ref{11}), and $F$ is such that 
+\begin{equation}
+    \label{12}
+    \begin{array}{ll}
+        (p-w) \ell(w \mid R, F)=\pi \quad & \text{for all $w$ on support of $F$} \\
+        (p-w) \ell(w \mid R, F) \leq \pi \quad & \text{otherwise.}
+    \end{array}
+\end{equation}
+Our first task is to establish the existence of a unique equilibrium solution. To rule out the trivial case, assume $0 \leq b < p < \infty$, that is, the productivity of workers is greater than the common opportunity cost of employment. Further, and this is a more critical restriction, assume $0 < k_i < \infty$, $i = 0, 1$. The role of this restriction plays is discussed later. 
+
+Let $\undl{w}$ and $\ol{w}$ denote the infimum and supremum of the support of an equilibrium $F$ (given one exists). The first thing to note is that no employer will offer a wage less than $R$ in an equilibrium as any employer offering such a wage would have no employees. Hence, without loss of generality, we consider only those distribution functions which have $\undl{w} \geq R$.
+
+Before establishing existence of a unique equilibrium, noncontinuous wage offer distributions are first ruled out as possibilities. As stated previously, $\ell\of{w \mid R, F}$ is discontinuous at $w = \wh{t}$ if only if $\wh{w}$ is a mass point of $F$ and $\wh{w} \geq R$. This implies that an employer offering a wage slightly greater than $\wh{w}$, a mass point where $R \leq \wh{w} < p$, has a significantly larger steady-state labor force and only a slightly smaller profit per worker than an employer offering $\wh{w}$ as $\bp{p-w}$ is continuous in $w$. Hence, any wage just above $\wh{w}$ yields a greater profit. If there were a mass of $F$ at $\wh{w} \geq p$, all firms offering such a wage make a nonpositive profit. However, any firm offering a wage slightly lower than $p$ will make a strictly positive profit as it still attracts a positive steady-state labor force. In short, offering a wage equal to a mass point $\wh{w}$ cannot be profit maximizing in the sense of (\ref{12}). \highlightP{Note, this conclusion rules out a single market wage as an equilibrium possibility. }
+
+As noncontinuous offer distributions have been ruled out, (\ref{10}) implies that
+\begin{equation}
+    \label{13}
+    \ell\of{\undl{w} \mid R, F} = \frac{m k_0}{\bp{1+k_0}\bp{1+k_1}}
+\end{equation}
+independent of the wage offered as long as $\undl{w} \geq R$. This, of course, implies the employer offering the lowest wage in the market will maximize its profit flow if and only if
+\begin{equation}
+    \label{14}
+    \undl{w} = R.
+\end{equation}
+At any equilibrium every offer must yield the same steady-state profit, which equals 
+\begin{equation}
+    \label{15}
+    \pi=(p-R) \frac{m k_0}{\bp{1+k_0}\bp{1+k_1}} = (p-w) \ell(w \mid R, F)
+\end{equation}
+for all $w$ in the support of $F$ by equation (\ref{13}). As $\undl{w} = R$, equations (\ref{10}) and (\ref{15}) imply that the unique candidate for $F$ is 
+\begin{equation}
+    \label{16}
+    F\of{w} = \frac{1 + k_1}{k_1} \bs{1 - \sqrt{\frac{p - w}{p - R}}}.
+\end{equation}
+
+Substituting (\ref{16}) into (\ref{5}) yields, 
+\begin{equation}
+    \notag 
+    R - b = \frac{k_0-k_1}{k_1}\left[\bar{w}-R+\frac{2(p-R)}{1+k_1}\left(\left(\frac{p-\bar{w}}{p-R}\right)^{1 / 2}-1\right)\right].
+\end{equation}
+However, recognizing that $F\of{\ol{w}} = 1$, manipulation of equation (\ref{16}) yields 
+\begin{equation}
+    \label{17}
+    p - \ol{w} = \frac{p - R}{\bp{1 + k_1}^2}
+\end{equation}
+so that 
+\begin{equation}
+    \label{18} 
+    R=\frac{\left(1+k_1\right)^2 b+\left(k_0-k_1\right) k_1 p}{\left(1+k_1\right)^2+\left(k_0-k_1\right) k_1}
+\end{equation}
+Equations (\ref{17}) and (\ref{18}) imply the support of the only equilibrium candidate, $\bs{R, \ol{w}}$ is nondegenerate and lies strictly below $p$. Therefore, profit on the support, $\pi$, is strictly positive.
+
+To complete the proof that equations (\ref{14}), (\ref{16}), (\ref{17}), and (\ref{18}) characterize the unique equilibrium, we need only show that no wage off the support of the candidate $F$ yields higher profits. Profits from offers less those on the support attract no workers and therefore yield zero profits, whereas a wage offer greater than $\ol{w}$, the supremum of the support, attracts no more workers than $\ell{\ol{w} \mid R, F}$, and hence yields a lower profit. Hence, the claim is established.
+
+A critical feature of the model is the positive relationship between the wage offer and employer labor force size it implies. As the voluntary quit rate, $\l F\of{w}$, decreases with the wage offer, larger firms experience lower quit rates. Because workers only switch employers in response to a higher wage offer, workers with either more experience or tenure are more likely to be earning a higher wage.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
