@@ -1,0 +1,97 @@
+
+\documentclass[12pt]{article} 
+
+%?? paths
+\newcommand{\CiteMathPackage}{../../math} 
+\newcommand{\CiteReference}{../reference.bib}
+
+%?? packages 
+\usepackage{setspace,geometry,fancyvrb,rotating} 
+\usepackage{marginnote,datetime,enumitem} 
+\usepackage{titlesec,indentfirst} 
+\usepackage{amsmath,amsfonts,amssymb,amsthm,mathtools} 
+\usepackage{threeparttable,booktabs,adjustbox} 
+\usepackage{graphicx,epstopdf,float,soul,subfig} 
+\usepackage[toc,page]{appendix} 
+\usdate
+
+%?? page setup 
+\geometry{scale=0.8} 
+\titleformat{\paragraph}[runin]{\itshape}{}{}{}[.] 
+\titlelabel{\thetitle.\;} 
+\setlength{\parindent}{10pt} 
+\setlength{\parskip}{10pt} 
+\usepackage{Alegreya} 
+\usepackage[T1]{fontenc}
+
+%?? bibliography 
+\usepackage{natbib,fancybox,url,xcolor} 
+\definecolor{MyBlue}{rgb}{0,0.2,0.6} 
+\definecolor{MyRed}{rgb}{0.4,0,0.1} 
+\definecolor{MyGreen}{rgb}{0,0.4,0} 
+\definecolor{MyPink}{HTML}{E50379} 
+\definecolor{MyOrange}{HTML}{CC5500} 
+\definecolor{MyPurple}{HTML}{BF40BF}
+\newcommand{\highlightR}[1]{{\emph{\color{MyRed}{#1}}}} 
+\newcommand{\highlightB}[1]{{\emph{\color{MyBlue}{#1}}}} 
+\newcommand{\highlightP}[1]{{\emph{\color{MyPink}{#1}}}} 
+\newcommand{\highlightO}[1]{{\emph{\color{MyOrange}{#1}}}}
+\newcommand{\highlightPP}[1]{{\emph{\color{MyPurple}{#1}}}}
+\usepackage[bookmarks=true,bookmarksnumbered=true,colorlinks=true,linkcolor=MyBlue,citecolor=MyRed,filecolor=MyBlue,urlcolor=MyGreen]{hyperref} \bibliographystyle{econ}
+
+%?? math and theorem environment 
+\theoremstyle{definition} 
+\newtheorem{assumption}{Assumption} 
+\newtheorem{definition}{Definition} 
+\newtheorem{theorem}{Theorem} 
+\newtheorem{proposition}{Proposition} 
+\newtheorem{lemma}{Lemma} 
+\newtheorem{example}{Example} 
+\newtheorem{corollary}[theorem]{Corollary} 
+\usepackage{mathtools} 
+\usepackage{\CiteMathPackage}
+
+\begin{document} 
+
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%?? 
+%?? title 
+%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??%??
+
+\title{\bf Combining Micro and Macro Unemployment Duration Data, Journal of Econometrics, 2001} 
+\author{Wenzhi Wang \thanks{This note is written in my pre-doc period at the University of Chicago Booth School of Business.} } 
+\date{\today} 
+\maketitle 
+
+\citet{vandenbergCombiningMicroMacro2001}
+
+\section{Introduction}
+
+The recently expanding macroeconomic literature on aggregate flows between labor market states stresses that \highlightP{the distribution of unemployment durations changes markedly over the business cycle}, and it acknowledges the importance of heterogeneity in both stocks and flows of unemployed workers. Empirically, the average duration is typically found to be countercyclical. This may be because \highlightP{in a recession the exit probability out of unemployment decreases for all workers}, or because \highlightP{in a recession the composition of the (heterogeneous) inflow shifts towards individuals who have low exit probabilities}. 
+
+Typical macro time-series data are not sufficiently informative to study this, because they do not contain information on the composition of the heterogeneous inflow into unemployment. Typical longitudinal micro data are neither sufficiently informative to study this issue, for the reason that they do not cover a sufficiently long time span. In microeconomic analyses of individual variation in unemployment duration, it is typically assumed that the parameters are independent of macroeconomic conditions, and these conditions are at most included by way of an additional regressor. 
+
+In this paper we combine micro and macro unemployment duration data in order to study the effects of the business cycle on the outflow from unemployment. We allow the business cycle to affect the individual exit probabilities of all unemployed workers, and we simultaneously allow it to affect the composition of the total inflow into unemployment. Both may lead to different aggregate exit probabilities. We allow the individual exit probabilities out of unemployment to depend on (i) the elapsed unemployment duration, (ii) calendar time, and (iii) personal characteristics. The dependence on calendar time is modeled by way of a product of a flexible high-order polynomial in calendar time (capturing business cycle effects) and dummy variables capturing seasonal effects. 
+
+We also model the joint distribution in the inflow into unemployment of the personal characteristics that affect the exit probabilities, including the way in which this distribution varies over time. In duration analysis it is standard practice to condition on explanatory variables such as personal characteristics. Here however their distribution is of interest. We allow for business cycle effects as well as seasonal effects on this distribution. Note that what really matters is not simply whether the inflow distribution of particular personal characteristics changes over time, but rather whether it changes for those characteristics that affect the exit probabilities. The composition of the inflow is only relevant in respect of personal characteristics that affect the exit probabilities. It is thus insufficient to investigate whether the composition changes by way of graphical checks on the proportion of certain types of individuals in the inflow. Instead, it is necessary to estimate a joint model for the composition of the inflow and the duration until outflow. 
+
+
+On a macro level, personal characteristics are unobserved. Observed explanatory characteristics at the micro level constitute unobserved heterogeneity at the aggregate level. Thus, the distribution of personal characteristics enters the expression for thr probability distribution of the observed macro unemployment durations. For the distribution of personal characteristics we use a specification based on Hermite polynomials. Such a specification is sufficiently flexible while being computationally feasible as well. In an extended version of our model we also allow for heterogeneity that is unobserved in the micro data. To enhance the empirical analysis we exploit the fact that multiple unemployment spells are observed for some individuals in the micro data.
+
+Ideally, the macro data provide the exact aggregate unemployment duration distributions in the population. Thus, ideally, these data are deterministically equal to the corresponding model expressions, and all parameters may be deduced from such equations. Unfortunately, the actual situation is more complicated than this. In most OECD countries, the official unemployment statistics follow an unemployment definition that differs from the definition in micro labor force surveys. In particular, as a rule, official national statistics count registrations at public employment agencies, whereas alternative statistics are based on self-reported unemployment in labor force surveys of sampled individuals. In this paper, we have to face this problem, as the micro data we use are from the French longitudinal labor force panel survey whereas the macro data concern French registered unemployment. The macro unemployment concept deviates from the micro concept in a number of respects.
+
+Indeed, the second motivation of this paper concerns the nature of the differences between the measures of unemployment based on the micro and macro definition, respectively (note that this motivation logically precedes the economic motivation described earlier in this section). The behavior over time of the di.erence in the levels of these two measures has been well documented. In this paper we analyze any differences on a deeper level. The full model contains a number of overidentifying restrictions, and by estimating the determinants of the duration distributions associated with both measures, we are able to describe and explain to what extent they are dissimilar. 
+
+Some of the differences between both unemployment measures relate to features of the individual search behavior, some to decisions by the employment agency, and some to practical measurement issues. It would be very difficult to derive macro duration distributions from individual duration distributions for the unemployment population corresponding to the macro definition. We therefore take a different approach. Basically, \highlightP{we take the observed macro exit probabilities to be equal to a perturbed version of the probabilities that would prevail if the macro definition would be the same as the micro definition}, and we allow for correlated measurement errors in the macro data. 
+
+
+
+
+
+
+
+
+
+
+\bibliography{\CiteReference} 
+
+\end{document}
